@@ -121,4 +121,46 @@ class Meme(BaseImage):
     pass
 
 class GenerateMeme():
-    pass
+    async def abandon(self, text):
+        image_bytes = await HTTPClient().get_image(f"abandon?text={text.replace(' ', '+')}")
+        return Meme(image_bytes)
+    
+    async def aborted(self, image_url):
+        image_bytes = await HTTPClient().get_image(f"aborted?image_url={image_url}")
+        return Meme(image_bytes)
+    
+    async def affect(self, image_url):
+        image_bytes = await HTTPClient().get_image(f"affect?image_url={image_url}")
+        return Meme(image_bytes)
+    
+    async def armor(self, text):
+        image_bytes = await HTTPClient().get_image(f"armor?text={text.replace(' ', '+')}")
+        return Meme(image_bytes)
+    
+    async def bongocat(self, image_url):
+        image_bytes = await HTTPClient().get_image(f"bongocat?image_url={image_url}")
+        return Meme(image_bytes)
+    
+    async def brazzers(self, image_url):
+        image_bytes = await HTTPClient().get_image(f"brazzers?image_url={image_url}")
+        return Meme(image_bytes)
+    
+    async def gun(self, image_url):
+        image_bytes = await HTTPClient().get_image(f"gun?image_url={image_url}")
+        return Meme(image_bytes)
+    
+    async def surprised(self, text):
+        image_bytes = await HTTPClient().get_image(f"surprised?text={text.replace(' ', '+')}")
+        return Meme(image_bytes)
+    
+    async def trash(self, image_url):
+        image_bytes = await HTTPClient().get_image(f"trash?image_url={image_url}")
+        return Meme(image_bytes)
+    
+    async def violence(self, text):
+        image_bytes = await HTTPClient().get_image(f"violence?text={text.replace(' ', '+')}")
+        return Meme(image_bytes)
+    
+    async def wanted(self, image_url):
+        image_bytes = await HTTPClient().get_image(f"wanted?image_url={image_url}")
+        return Meme(image_bytes)

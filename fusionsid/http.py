@@ -52,8 +52,7 @@ class HTTPClient:
             async with session.get(f"{self.BASE_URL}/{url}") as resp:
                 try:
                     response = await resp.json()
-                except Exception as e: 
-                    print(e)
+                except Exception: 
                     response = resp
         return response
     
@@ -72,7 +71,6 @@ class HTTPClient:
             async with session.get(url) as resp:
                 try:
                     response = await resp.json()
-                except Exception as e: 
-                    print(e)
+                except Exception: 
                     response = resp
         return response

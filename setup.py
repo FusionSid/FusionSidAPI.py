@@ -15,7 +15,6 @@ setup(
     packages=find_packages()
 )
 
-# commands cause I keep forgetting:
-
 # python3 setup.py bdist_wheel
+# twine upload dist/*
 # twine upload --skip-existing dist/*
