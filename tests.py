@@ -1,11 +1,12 @@
 import asyncio
-from fusionsid import RandomMeme, QRCode
+import fusionsid
+from fusionsid import Image, Fun
 
-async def e():
-    meme = await QRCode().generate("https://google.com")
-    # await meme
-    await meme.save("e.png")
+async def test():
+    print(await fusionsid.stats())
+   
+
 
 loop = asyncio.new_event_loop()
-loop.run_until_complete(e())
+loop.run_until_complete(test())
 
