@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/fusionsid/fusionsidapi.py/badge)](https://www.codefactor.io/repository/github/fusionsid/fusionsidapi.py)
+
 # FusionSidAPI Wrapper for python
 
 An asynchronous (badly coded) api wrapper to use [FusionSidAPI](https://fusionsidapi.herokuapp.com/) in python.

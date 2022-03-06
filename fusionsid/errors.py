@@ -1,6 +1,6 @@
 class Error(Exception):
     """Base class for other exceptions"""
-    pass
+    err = Exception
 
 class ImageNotGenerated(Error):
     """Raised when image is not generated"""

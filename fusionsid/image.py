@@ -1,4 +1,5 @@
 from .http import HTTPClient
+from datetime import datetime
 from typing import *
 import aiofiles
 from .errors import *
@@ -37,6 +38,7 @@ class RandomMeme(BaseImage):
     def __init__(self, json, image_bytes) -> None:
         self.json = json
         super().__init__(image_bytes=image_bytes)
+        self.created_at = datetime.now()
 
 
     @property
@@ -93,6 +95,7 @@ class QRCode(BaseImage):
     """
     def __init__(self, url, image_bytes):
         self.url = url
+        self.created_at = datetime.now()
         super().__init__(image_bytes=image_bytes)
 
 
@@ -118,7 +121,8 @@ class Meme(BaseImage):
     """
     ## Meme
     """
-    pass
+    def __init__(self):
+        self.created_at = datetime.now()
 
 class GenerateMeme():
     async def abandon(self, text):

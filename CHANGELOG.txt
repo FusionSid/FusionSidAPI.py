@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+0.0.2 (06/03/2022)
+-------------------
+- Added `created_at` Attribute to `Meme`, `QRCode` and `RandomMeme` classes
+
 0.0.1 (06/03/2022)
 -------------------
 - First Release
