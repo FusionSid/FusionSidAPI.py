@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+0.0.2 (08/03/2022)
+-------------------
+- Added Fact, `Truth`, `Dare` and `Truth+Dare` functions in the `Fun` Class
+
 0.0.2 (06/03/2022)
 -------------------
 - Added `created_at` Attribute to `Meme`, `QRCode` and `RandomMeme` classes

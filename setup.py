@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
  
-VERSION = '0.0.2'
-DESCRIPTION = "An asynchronous (badly coded) wrapper for FusionSidAPI."
+VERSION = '0.0.3'
+DESCRIPTION = "An asynchronous api wrapper for FusionSidsAPI."
 
 setup(
     name='fusionsidsapi',
