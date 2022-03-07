@@ -23,7 +23,7 @@ async def stats(json=False):
         print("\n".join([f"{k} = {v}" for k, v in data["stats"].items()]))
         return "\n"
 
-    return data["stats"]
+    return data
 
 async def endpoints(json=False):
     data = await HTTPClient().get_url_json(f"{__url__}/api") 

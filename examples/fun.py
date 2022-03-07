@@ -7,7 +7,11 @@ async def main():
 
     complement = await Fun().compliment()
     print(complement)
+    
+    fact = await Fun().fact()
+    print(fact)
 
+    # There is more endpoints (eg 8ball) these are just some examples
 
 loop = asyncio.new_event_loop()
 loop.run_until_complete(main())

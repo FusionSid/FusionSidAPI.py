@@ -27,3 +27,35 @@ class Fun():
         """
         data = await HTTPClient().get_json("compliment")
         return data["compliment"]
+
+    async def truth(self):
+        """
+        ### Example:
+            >>> print(await Fun().truth())
+        """
+        data = await HTTPClient().get_json("truthordare")
+        return data["truth"]
+
+    async def dare(self):
+        """
+        ### Example:
+            >>> print(await Fun().dare())
+        """
+        data = await HTTPClient().get_json("truthordare")
+        return data["dare"]
+    
+    async def truth_or_dare(self):
+        """
+        ### Example:
+            >>> print(await Fun().truth_or_dare())
+        """
+        data = await HTTPClient().get_json("truthordare")
+        return data
+
+    async def fact(self):
+        """
+        ### Example:
+            >>> print(await Fun().fact())
+        """
+        data = await HTTPClient().get_json("fact")
+        return data["fact"]
