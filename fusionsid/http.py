@@ -1,5 +1,5 @@
 import aiohttp
-from typing import *
+from typing import Dict
 
 class HTTPClient:
     def __init__(self):

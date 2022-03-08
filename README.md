@@ -2,7 +2,7 @@
 
 # FusionSidAPI Wrapper for python
 
-An asynchronous (badly coded) api wrapper to use [FusionSidAPI](https://fusionsidapi.herokuapp.com/) in python.
+An asynchronous api wrapper to use [FusionSidAPI](https://fusionsidapi.herokuapp.com/) in python.
 
 ---
 
@@ -12,14 +12,32 @@ You can install this library from PyPi: [Link](https://pypi.org/project/fusionsi
 
 **Install with pip:**
 ```py
-pip install fusionsidsapi
+pip install -U fusionsidsapi
 ```
 
 ---
 
+# Need Help
+
+Even though there is so documentation for this package at the moment, each class and function has a doc string so if you need help with anything in the pacakge just use the built in python function `help()`
+
+eg:
+```py
+import fusionsid
+
+# Example 1
+help(fusionsid.RandomMeme)
+help(fusionsid.GenerateMeme)
+
+# Example 2
+help(fusionsid.Image.qrcode)
+help(fusionsid.Fun.truth_or_dare)
+
+```
+
 # Examples:
 
-Look in the [examples](/examples/) folder for some examples
+Look in the [examples](https://github.com/FusionSid/FusionSidAPI.py/tree/master/examples) folder for some examples
 
 Example for getting a roast:
 ```py
@@ -42,3 +60,5 @@ loop.run_until_complete(main())
 
 ## Contact:
 Discord: `FusionSid#3645`
+
+[My Github](https://github.com/FusionSid/)

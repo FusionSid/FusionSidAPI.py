@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+0.0.5 (08/03/2022)
+-------------------
+- Fixed some bugs with the stats
+
 0.0.4 (08/03/2022)
 -------------------
 - Added doc strings to every function/class

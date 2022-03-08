@@ -1,10 +1,21 @@
 from .http import HTTPClient
-from typing import *
+from typing import Dict
 from .errors import *
 
 class Fun():
     """
-    
+    A bunch of Fun functions
+    ----
+
+    Methods
+    -------
+        eightball() : 8ball
+        roast() : Returns a roast
+        compliment() : Returns a complement
+        truth() : Returns a truth
+        dare() : Returns a dare
+        truth_or_dare() : Returns a Dict with a truth, dare and random choice
+        fact() : Returns a fact
     """
 
     async def eightball(self) -> str:

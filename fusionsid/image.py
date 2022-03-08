@@ -1,6 +1,5 @@
 from .http import HTTPClient
 from datetime import datetime
-from typing import *
 import aiofiles
 from .errors import *
 
@@ -176,17 +175,17 @@ class GenerateMeme():
 
     Methods
     -------
-        abandon(text : str) Returns `Meme`
-        aborted(image_url : str) Returns `Meme`
-        affect(image_url : str) Returns `Meme`
-        armor(text : str) Returns `Meme`
-        bongocat(image_url : str) Returns `Meme`
-        brazzers(image_url : str) Returns `Meme`
-        gun(image_url : str) Returns `Meme`
-        surprised(text : str) Returns `Meme`
-        trash(image_url : str) Returns `Meme`
-        violence(text : str) Returns `Meme`
-        wanted(image_url : str) Returns `Meme`
+        abandon(text : str) : Returns a `Meme`
+        aborted(image_url : str) : Returns a `Meme`
+        affect(image_url : str) : Returns a `Meme`
+        armor(text : str) : Returns a `Meme`
+        bongocat(image_url : str) : Returns a `Meme`
+        brazzers(image_url : str) : Returns a `Meme`
+        gun(image_url : str) : Returns a `Meme`
+        surprised(text : str) : Returns a `Meme`
+        trash(image_url : str) : Returns a `Meme`
+        violence(text : str) : Returns a `Meme`
+        wanted(image_url : str) : Returns a `Meme`
     """
 
     async def abandon(self, text : str) -> Meme:
@@ -319,4 +318,3 @@ class GenerateMeme():
         """
         image_bytes = await HTTPClient().get_image(f"wanted?image_url={image_url}")
         return Meme(image_bytes)
-
