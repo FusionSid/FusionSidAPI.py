@@ -3,58 +3,68 @@ from typing import *
 from .errors import *
 
 class Fun():
+    """
+    
+    """
 
-    async def eightball(self):
+    async def eightball(self) -> str:
         """
-        ### Example:
+        Example
+        -------
             >>> print(await Fun().eightball())
         """
         data = await HTTPClient().get_json("8ball")
         return data["answer"]
     
-    async def roast(self):
+    async def roast(self) -> str:
         """
-        ### Example:
+        Example
+        -------
             >>> print(await Fun().roast())
         """
         data = await HTTPClient().get_json("roast")
         return data["roast"]
     
-    async def compliment(self):
+    async def compliment(self) -> str:
         """
-        ### Example:
+        Example
+        -------
             >>> print(await Fun().compliment())
         """
         data = await HTTPClient().get_json("compliment")
         return data["compliment"]
 
-    async def truth(self):
+    async def truth(self) -> str:
         """
-        ### Example:
+        Example
+        -------
             >>> print(await Fun().truth())
         """
         data = await HTTPClient().get_json("truthordare")
         return data["truth"]
 
-    async def dare(self):
+    async def dare(self) -> str:
         """
-        ### Example:
+        Example
+        -------
             >>> print(await Fun().dare())
         """
         data = await HTTPClient().get_json("truthordare")
         return data["dare"]
     
-    async def truth_or_dare(self):
+    async def truth_or_dare(self) -> Dict[str, str]:
         """
-        ### Example:
+        Example
+        -------
             >>> print(await Fun().truth_or_dare())
         """
         data = await HTTPClient().get_json("truthordare")
         return data
 
-    async def fact(self):
+    async def fact(self) -> str:
         """
-        ### Example:
+        Example
+        -------
             >>> print(await Fun().fact())
         """
         data = await HTTPClient().get_json("fact")

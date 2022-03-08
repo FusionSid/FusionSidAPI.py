@@ -5,10 +5,21 @@ import aiofiles
 from .errors import *
 
 class BaseImage:
+    """
+    Base class for all images
+    -------------------------
+
+    Methods
+    -------
+        save(path : str) : Saves the file to a path
+    """
     def __init__(self, image_bytes=None) -> None:
         self.image_bytes = image_bytes
 
     async def save(self, path: str) -> None:
+        """
+        Saves an image
+        """
         if self.image_bytes is None:
             raise ImageNotGenerated
         async with aiofiles.open(path, 'wb') as f:
@@ -17,24 +28,26 @@ class BaseImage:
 
 class RandomMeme(BaseImage):
     """
-    ## Random Meme
-    ----
+    Random Meme
+    -----------
 
-    ### Example:
-        >>> meme = Image().get_meme()
+    Example
+    -------
+        >>> meme = await Image().random_meme()
         >>> await meme.save('meme.png')
 
-    ----
-
-    ### Attrbutes:
-        image_bytes : The image in bytes
+    Attrbutes
+    ---------
+        image_bytes (bytes) : The image in bytes
         title (str) : Title of the post
         upvotes (str) : How many upvotes the meme has
         author (str) : Author of the meme
         url (str) : Url to the reddit post
         ext (str) : The file extension (eg: png)
         json (Dict) : The json response from the api
+        created_at (datetime.datetime) : The time when the class was made
     """ 
+    
     def __init__(self, json, image_bytes) -> None:
         self.json = json
         super().__init__(image_bytes=image_bytes)
@@ -43,6 +56,7 @@ class RandomMeme(BaseImage):
 
     @property
     def title(self) -> str:
+        """The title of the meme"""
         if self.image_bytes is None:
             raise ImageNotGenerated
         return self.json['title']
@@ -50,6 +64,7 @@ class RandomMeme(BaseImage):
 
     @property
     def upvotes(self) -> str:
+        """How many upvotes the meme has"""
         if self.image_bytes is None:
             raise ImageNotGenerated
         return self.json['upvotes']
@@ -57,6 +72,7 @@ class RandomMeme(BaseImage):
     
     @property
     def author(self) -> str:
+        """Author of the post"""
         if self.image_bytes is None:
             raise ImageNotGenerated
         return self.json['author']
@@ -64,6 +80,7 @@ class RandomMeme(BaseImage):
     
     @property
     def url(self) -> str:
+        """Url to the reddit post"""
         if self.image_bytes is None:
             raise ImageNotGenerated
         return self.json['url']
@@ -71,6 +88,7 @@ class RandomMeme(BaseImage):
 
     @property
     def ext(self) -> str:
+        """The file extension"""
         if self.image_bytes is None:
             raise ImageNotGenerated
         return self.json["url"].split(".")[-1]
@@ -78,19 +96,19 @@ class RandomMeme(BaseImage):
 
 class QRCode(BaseImage):
     """
-    ## QR Code
+    QR Code
+    -------
 
-    ----
-
-    ### Example:
+    Example
+    -------
         >>> qrcode = Image().qrcode("https://google.com")
         >>> await meme.save('qrcode.png')
-    
-    ----
 
-    ### Attrbutes:
+    Attrbutes
+    ---------
         url (str) : The url that your making the meme for
-        image_bytes : The image in bytes
+        image_bytes (bytes) : The image in bytes
+        created_at (datetime) : The time when the class was made
     
     """
     def __init__(self, url, image_bytes):
@@ -100,7 +118,23 @@ class QRCode(BaseImage):
 
 
 class Image():
+    """
+    Group of non meme generating image function
+    -------------------------------------------
+
+    Methods
+    -------
+        random_meme()
+        qrcode(url : str)
+    
+    """
     async def random_meme(self) -> RandomMeme:
+        """
+        Gets a random meme from the subreddit: r/memes
+        
+        Returns:
+            RandomMeme : The meme
+        """
         while True:
             image = await HTTPClient().get_json(url="meme?reddit_json_info=True")
             if '.' in image['url']:
@@ -111,7 +145,13 @@ class Image():
         return RandomMeme(json=image, image_bytes=image_bytes)
 
 
-    async def qrcode(self, url) -> QRCode:
+    async def qrcode(self, url : str) -> QRCode:
+        """
+        Generates a qr code
+
+        Returns:
+            QRCode : The qrcode
+        """
         qrcode = await HTTPClient().get_image(f"qrcode?link={url}")
         
         return QRCode(url, qrcode)
@@ -119,52 +159,164 @@ class Image():
 
 class Meme(BaseImage):
     """
-    ## Meme
+    Meme
+    ----
+
+    Attributes
+    ----------
+        created_at (datetime) : The time when the class was made
     """
     def __init__(self):
         self.created_at = datetime.now()
 
 class GenerateMeme():
-    async def abandon(self, text):
+    """
+    Generate Meme
+    -------------
+
+    Methods
+    -------
+        abandon(text : str) Returns `Meme`
+        aborted(image_url : str) Returns `Meme`
+        affect(image_url : str) Returns `Meme`
+        armor(text : str) Returns `Meme`
+        bongocat(image_url : str) Returns `Meme`
+        brazzers(image_url : str) Returns `Meme`
+        gun(image_url : str) Returns `Meme`
+        surprised(text : str) Returns `Meme`
+        trash(image_url : str) Returns `Meme`
+        violence(text : str) Returns `Meme`
+        wanted(image_url : str) Returns `Meme`
+    """
+
+    async def abandon(self, text : str) -> Meme:
+        """
+        Generates the abandon meme
+
+        Args:
+            text : (str) : The text you want to use for the meme
+
+        """
         image_bytes = await HTTPClient().get_image(f"abandon?text={text.replace(' ', '+')}")
         return Meme(image_bytes)
     
-    async def aborted(self, image_url):
+
+    async def aborted(self, image_url : str) -> Meme:
+        """
+        Generates the aborted meme
+
+        Args:
+            image_url : (str) : The image you want to use for the meme
+
+        """
         image_bytes = await HTTPClient().get_image(f"aborted?image_url={image_url}")
         return Meme(image_bytes)
     
-    async def affect(self, image_url):
+
+    async def affect(self, image_url : str) -> Meme:
+        """
+        Generates the aborted meme
+
+        Args:
+            image_url : (str) : The image you want to use for the meme
+
+        """
         image_bytes = await HTTPClient().get_image(f"affect?image_url={image_url}")
         return Meme(image_bytes)
     
-    async def armor(self, text):
+
+    async def armor(self, text : str) -> Meme:
+        """
+        Generates the armor meme
+
+        Args:
+            text : (str) : The text you want to use for the meme
+
+        """
         image_bytes = await HTTPClient().get_image(f"armor?text={text.replace(' ', '+')}")
         return Meme(image_bytes)
     
-    async def bongocat(self, image_url):
+
+    async def bongocat(self, image_url : str) -> Meme:
+        """
+        Generates the bongocat meme
+
+        Args:
+            image_url : (str) : The image you want to use for the meme
+
+        """
         image_bytes = await HTTPClient().get_image(f"bongocat?image_url={image_url}")
         return Meme(image_bytes)
     
-    async def brazzers(self, image_url):
+
+    async def brazzers(self, image_url : str) -> Meme:
+        """
+        Generates the brazzers meme
+
+        Args:
+            image_url : (str) : The image you want to use for the meme
+
+        """
         image_bytes = await HTTPClient().get_image(f"brazzers?image_url={image_url}")
         return Meme(image_bytes)
     
-    async def gun(self, image_url):
+
+    async def gun(self, image_url : str) -> Meme:
+        """
+        Generates the gun meme
+
+        Args:
+            image_url : (str) : The image you want to use for the meme
+
+        """
         image_bytes = await HTTPClient().get_image(f"gun?image_url={image_url}")
         return Meme(image_bytes)
     
-    async def surprised(self, text):
+
+    async def surprised(self, text : str) -> Meme:
+        """
+        Generates the surprised meme
+
+        Args:
+            text : (str) : The text you want to use for the meme
+
+        """
         image_bytes = await HTTPClient().get_image(f"surprised?text={text.replace(' ', '+')}")
         return Meme(image_bytes)
     
-    async def trash(self, image_url):
+
+    async def trash(self, image_url : str) -> Meme:
+        """
+        Generates the trash meme
+
+        Args:
+            image_url : (str) : The image you want to use for the meme
+
+        """
         image_bytes = await HTTPClient().get_image(f"trash?image_url={image_url}")
         return Meme(image_bytes)
     
-    async def violence(self, text):
+
+    async def violence(self, text : str) -> Meme:
+        """
+        Generates the violence meme
+
+        Args:
+            text : (str) : The text you want to use for the meme
+
+        """
         image_bytes = await HTTPClient().get_image(f"violence?text={text.replace(' ', '+')}")
         return Meme(image_bytes)
     
-    async def wanted(self, image_url):
+
+    async def wanted(self, image_url : str) -> Meme:
+        """
+        Generates the wanted meme
+
+        Args:
+            image_url : (str) : The image you want to use for the meme
+
+        """
         image_bytes = await HTTPClient().get_image(f"wanted?image_url={image_url}")
         return Meme(image_bytes)
+

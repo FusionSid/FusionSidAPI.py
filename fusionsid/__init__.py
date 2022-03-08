@@ -16,7 +16,13 @@ __url__ = "https://fusionsidapi.herokuapp.com"
 __github__ = "https://github.com/FusionSid/FusionSidAPI.py"
 __api_github__ = "https://github.com/FusionSid/FusionSidsAPI"
 
-async def stats(json=False):
+async def stats(json=False) -> Dict:
+    """
+    Stats about the api
+
+    Returns:
+        Dict
+    """
     data = await HTTPClient().get_url_json(f"{__url__}/stats")
 
     if not json:
@@ -25,7 +31,13 @@ async def stats(json=False):
 
     return data
 
-async def endpoints(json=False):
+async def endpoints(json=False) -> Dict:
+    """
+    List of api endpoints
+
+    Returns:
+        Dict
+    """
     data = await HTTPClient().get_url_json(f"{__url__}/api") 
     endpoints = "\n".join([f"GET {i}" for i in data["endpoints"]])
 
