@@ -1,7 +1,11 @@
 Change Log
 ==========
 
-0.0.2 (08/03/2022)
+0.0.4 (08/03/2022)
+-------------------
+- Added doc strings to every function/class
+
+0.0.3 (08/03/2022)
 -------------------
 - Added Fact, `Truth`, `Dare` and `Truth+Dare` functions in the `Fun` Class
 
