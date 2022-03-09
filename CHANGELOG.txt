@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+
+0.0.6 (09/03/2022)
+-------------------
+- Wordle answer
+
 0.0.5 (08/03/2022)
 -------------------
 - Fixed some bugs with the stats

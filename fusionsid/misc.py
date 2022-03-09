@@ -80,3 +80,12 @@ class Fun():
         """
         data = await HTTPClient().get_json("fact")
         return data["fact"]
+
+    async def wordle(self) -> str:
+        """
+        Example
+        -------
+            >>> print(await Fun().wordle())
+        """
+        data = await HTTPClient().get_json("wordle")
+        return data["wordle"]
