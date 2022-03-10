@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
  
-VERSION = '0.0.6'
+VERSION = '0.0.7'
 DESCRIPTION = "An asynchronous api wrapper for FusionSidsAPI."
 
 setup(
@@ -21,5 +21,4 @@ setup(
 
 # python3 setup.py bdist_wheel
 # twine upload dist/*
-# twine upload --skip-existing dist/*
 # sudo rm -rf ./build ./dist ./*egg-info

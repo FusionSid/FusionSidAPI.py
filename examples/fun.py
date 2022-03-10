@@ -11,7 +11,8 @@ async def main():
     fact = await Fun().fact()
     print(fact)
 
-    # There is more endpoints (eg 8ball) these are just some examples
+    search = await Fun().reddit_search("discord bots")
+    print(search)
 
 loop = asyncio.new_event_loop()
 loop.run_until_complete(main())

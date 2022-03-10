@@ -1,6 +1,7 @@
 from fusionsid.image import *
-from fusionsid.misc import * 
+from fusionsid.fun import * 
 from fusionsid.errors import *
+from fusionsid.text import *
 from fusionsid.http import *
    
 """
@@ -11,7 +12,7 @@ An asynchronous api wrapper for [FusionSidAPI](https://fusionsidapi.herokuapp.co
 __title__ = "fusionsidapi"
 __license__ = "MIT"
 __author__ = "FusionSid"
-__version__ = "0.0.6"
+__version__ = "0.0.7"
 __url__ = "https://fusionsidapi.herokuapp.com"
 __github__ = "https://github.com/FusionSid/FusionSidAPI.py"
 __api_github__ = "https://github.com/FusionSid/FusionSidsAPI"

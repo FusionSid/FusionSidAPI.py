@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+0.0.7 (10/03/2022)
+-------------------
+- Added 9 Text convert functions in `fusionsid.Text()` 
+- Added reddit_search
 
 0.0.6 (09/03/2022)
 -------------------

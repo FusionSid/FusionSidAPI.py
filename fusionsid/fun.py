@@ -1,5 +1,5 @@
 from .http import HTTPClient
-from typing import Dict
+from typing import Dict, List
 from .errors import *
 
 class Fun():
@@ -16,6 +16,8 @@ class Fun():
         dare() : Returns a dare
         truth_or_dare() : Returns a Dict with a truth, dare and random choice
         fact() : Returns a fact
+        wordle() : Gets the wordle answer for today
+        reddit_search(keyword : str) : Searches reddit
     """
 
     async def eightball(self) -> str:
@@ -89,3 +91,16 @@ class Fun():
         """
         data = await HTTPClient().get_json("wordle")
         return data["wordle"]
+
+    async def reddit_search(self, keyword : str) -> List[Dict]:
+        """
+        Args:
+            keyword (str) : The search query to search on reddit
+
+        Example
+        -------
+            >>> print(await Fun().reddit_search(keyword="Meme"))
+        """
+        data = await HTTPClient().get_json(f"""searchreddit?keyword={keyword}""")
+        
+        return data
