@@ -16,7 +16,7 @@ You can install this library from PyPi: [Link](https://pypi.org/project/fusionsi
 
 **Install with pip:**
 ```py
-pip install -U fusionsidsapi
+pip install fusionsidsapi
 ```
 
 ---
@@ -66,3 +66,6 @@ loop.run_until_complete(main())
 Discord: `FusionSid#3645`
 
 [My Github](https://github.com/FusionSid/)
+
+## Changelog:
+You can checkout the changes per version in [CHANGELOG.txt](https://github.com/FusionSid/FusionSidAPI.py/blob/master/CHANGELOG.txt)
