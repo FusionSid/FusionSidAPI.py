@@ -1,0 +1,1018 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>fusionsid package &mdash; FusionSidAPI.py 0.0.7 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="FusionSidAPI-py" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> FusionSidAPI.py
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">fusionsid package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fusionsid.errors">fusionsid.errors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fusionsid.fun">fusionsid.fun module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fusionsid.http">fusionsid.http module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fusionsid.image">fusionsid.image module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fusionsid.text">fusionsid.text module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-fusionsid">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FusionSidAPI.py</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+<div class="git-ribbon">
+  <a href="http://github.com/SwissDataScienceCenter" rel="me">Join us on GitHub</a>
+</div>
+
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>fusionsid package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/fusionsid.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fusionsid-package">
+<h1>fusionsid package<a class="headerlink" href="#fusionsid-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-fusionsid.errors">
+<span id="fusionsid-errors-module"></span><h2>fusionsid.errors module<a class="headerlink" href="#module-fusionsid.errors" title="Permalink to this headline">¶</a></h2>
+<dl class="py exception">
+<dt class="sig sig-object py" id="fusionsid.errors.Error">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fusionsid.errors.</span></span><span class="sig-name descname"><span class="pre">Error</span></span><a class="reference internal" href="_modules/fusionsid/errors.html#Error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.errors.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Base class for other exceptions</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fusionsid.errors.Error.err">
+<span class="sig-name descname"><span class="pre">err</span></span><a class="headerlink" href="#fusionsid.errors.Error.err" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="fusionsid.errors.ImageNotGenerated">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fusionsid.errors.</span></span><span class="sig-name descname"><span class="pre">ImageNotGenerated</span></span><a class="reference internal" href="_modules/fusionsid/errors.html#ImageNotGenerated"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.errors.ImageNotGenerated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fusionsid.errors.Error" title="fusionsid.errors.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">fusionsid.errors.Error</span></code></a></p>
+<p>Raised when image is not generated</p>
+</dd></dl>
+
+</div>
+<hr class="docutils" />
+<div class="section" id="module-fusionsid.fun">
+<span id="fusionsid-fun-module"></span><h2>fusionsid.fun module<a class="headerlink" href="#module-fusionsid.fun" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="fusionsid.fun.Fun">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fusionsid.fun.</span></span><span class="sig-name descname"><span class="pre">Fun</span></span><a class="reference internal" href="_modules/fusionsid/fun.html#Fun"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.fun.Fun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">eightball()</span> <span class="pre">:</span> <span class="pre">8ball</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">roast()</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">roast</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">compliment()</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">complement</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">truth()</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">truth</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">dare()</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">dare</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">truth_or_dare()</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">Dict</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">truth,</span> <span class="pre">dare</span> <span class="pre">and</span> <span class="pre">random</span> <span class="pre">choice</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">fact()</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">fact</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">wordle()</span> <span class="pre">:</span> <span class="pre">Gets</span> <span class="pre">the</span> <span class="pre">wordle</span> <span class="pre">answer</span> <span class="pre">for</span> <span class="pre">today</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">reddit_search(keyword</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Searches</span> <span class="pre">reddit</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.fun.Fun.compliment">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compliment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/fusionsid/fun.html#Fun.compliment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.fun.Fun.compliment" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Fun</span><span class="p">()</span><span class="o">.</span><span class="n">compliment</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.fun.Fun.dare">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dare</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/fusionsid/fun.html#Fun.dare"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.fun.Fun.dare" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Fun</span><span class="p">()</span><span class="o">.</span><span class="n">dare</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.fun.Fun.eightball">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eightball</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/fusionsid/fun.html#Fun.eightball"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.fun.Fun.eightball" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Fun</span><span class="p">()</span><span class="o">.</span><span class="n">eightball</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.fun.Fun.fact">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fact</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/fusionsid/fun.html#Fun.fact"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.fun.Fun.fact" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Fun</span><span class="p">()</span><span class="o">.</span><span class="n">fact</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.fun.Fun.reddit_search">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reddit_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keyword</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/fusionsid/fun.html#Fun.reddit_search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.fun.Fun.reddit_search" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>keyword</strong> (<em>str</em>) – The search query to search on reddit</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Fun</span><span class="p">()</span><span class="o">.</span><span class="n">reddit_search</span><span class="p">(</span><span class="n">keyword</span><span class="o">=</span><span class="s2">&quot;Meme&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.fun.Fun.roast">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">roast</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/fusionsid/fun.html#Fun.roast"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.fun.Fun.roast" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Fun</span><span class="p">()</span><span class="o">.</span><span class="n">roast</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.fun.Fun.truth">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">truth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/fusionsid/fun.html#Fun.truth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.fun.Fun.truth" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Fun</span><span class="p">()</span><span class="o">.</span><span class="n">truth</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.fun.Fun.truth_or_dare">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">truth_or_dare</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/fusionsid/fun.html#Fun.truth_or_dare"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.fun.Fun.truth_or_dare" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Fun</span><span class="p">()</span><span class="o">.</span><span class="n">truth_or_dare</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.fun.Fun.wordle">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wordle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/fusionsid/fun.html#Fun.wordle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.fun.Fun.wordle" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Fun</span><span class="p">()</span><span class="o">.</span><span class="n">wordle</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<hr class="docutils" />
+<div class="section" id="module-fusionsid.http">
+<span id="fusionsid-http-module"></span><h2>fusionsid.http module<a class="headerlink" href="#module-fusionsid.http" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="fusionsid.http.HTTPClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fusionsid.http.</span></span><span class="sig-name descname"><span class="pre">HTTPClient</span></span><a class="reference internal" href="_modules/fusionsid/http.html#HTTPClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.http.HTTPClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.http.HTTPClient.get_image">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="reference internal" href="_modules/fusionsid/http.html#HTTPClient.get_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.http.HTTPClient.get_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function makes a get request to a url and returns the image</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – The url to make a request to</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.http.HTTPClient.get_json">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="reference internal" href="_modules/fusionsid/http.html#HTTPClient.get_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.http.HTTPClient.get_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function makes a GET request to a url and returns the json</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em>) – The url to make a request to</p></li>
+<li><p><strong>data</strong> (<em>Dict</em><em>, </em><em>optional</em>) – This is a dictionary of any extra params to send the request</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The json response</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.http.HTTPClient.get_url_image">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_url_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="reference internal" href="_modules/fusionsid/http.html#HTTPClient.get_url_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.http.HTTPClient.get_url_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function makes a get request to a url and returns the image</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – The url to make a request to</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.http.HTTPClient.get_url_json">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_url_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="reference internal" href="_modules/fusionsid/http.html#HTTPClient.get_url_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.http.HTTPClient.get_url_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function makes a GET request to a url and returns the json</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em>) – The url to make a request to</p></li>
+<li><p><strong>data</strong> (<em>Dict</em><em>, </em><em>optional</em>) – This is a dictionary of any extra params to send the request</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The json response</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<hr class="docutils" />
+<div class="section" id="module-fusionsid.image">
+<span id="fusionsid-image-module"></span><h2>fusionsid.image module<a class="headerlink" href="#module-fusionsid.image" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="fusionsid.image.BaseImage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fusionsid.image.</span></span><span class="sig-name descname"><span class="pre">BaseImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_bytes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fusionsid/image.html#BaseImage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.BaseImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">save(path</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Saves</span> <span class="pre">the</span> <span class="pre">file</span> <span class="pre">to</span> <span class="pre">a</span> <span class="pre">path</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.image.BaseImage.save">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/fusionsid/image.html#BaseImage.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.BaseImage.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves an image</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="fusionsid.image.GenerateMeme">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fusionsid.image.</span></span><span class="sig-name descname"><span class="pre">GenerateMeme</span></span><a class="reference internal" href="_modules/fusionsid/image.html#GenerateMeme"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.GenerateMeme" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">abandon(text</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">`Meme`</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">aborted(image_url</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">`Meme`</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">affect(image_url</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">`Meme`</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">armor(text</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">`Meme`</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">bongocat(image_url</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">`Meme`</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">brazzers(image_url</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">`Meme`</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">gun(image_url</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">`Meme`</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">surprised(text</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">`Meme`</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">trash(image_url</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">`Meme`</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">violence(text</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">`Meme`</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">wanted(image_url</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Returns</span> <span class="pre">a</span> <span class="pre">`Meme`</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.image.GenerateMeme.abandon">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">abandon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fusionsid.image.Meme" title="fusionsid.image.Meme"><span class="pre">fusionsid.image.Meme</span></a></span></span><a class="reference internal" href="_modules/fusionsid/image.html#GenerateMeme.abandon"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.GenerateMeme.abandon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the abandon meme</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – (str) : The text you want to use for the meme</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.image.GenerateMeme.aborted">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">aborted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fusionsid.image.Meme" title="fusionsid.image.Meme"><span class="pre">fusionsid.image.Meme</span></a></span></span><a class="reference internal" href="_modules/fusionsid/image.html#GenerateMeme.aborted"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.GenerateMeme.aborted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the aborted meme</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>image_url</strong> – (str) : The image you want to use for the meme</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.image.GenerateMeme.affect">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">affect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fusionsid.image.Meme" title="fusionsid.image.Meme"><span class="pre">fusionsid.image.Meme</span></a></span></span><a class="reference internal" href="_modules/fusionsid/image.html#GenerateMeme.affect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.GenerateMeme.affect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the aborted meme</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>image_url</strong> – (str) : The image you want to use for the meme</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.image.GenerateMeme.armor">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">armor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fusionsid.image.Meme" title="fusionsid.image.Meme"><span class="pre">fusionsid.image.Meme</span></a></span></span><a class="reference internal" href="_modules/fusionsid/image.html#GenerateMeme.armor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.GenerateMeme.armor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the armor meme</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – (str) : The text you want to use for the meme</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.image.GenerateMeme.bongocat">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bongocat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fusionsid.image.Meme" title="fusionsid.image.Meme"><span class="pre">fusionsid.image.Meme</span></a></span></span><a class="reference internal" href="_modules/fusionsid/image.html#GenerateMeme.bongocat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.GenerateMeme.bongocat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the bongocat meme</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>image_url</strong> – (str) : The image you want to use for the meme</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.image.GenerateMeme.brazzers">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">brazzers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fusionsid.image.Meme" title="fusionsid.image.Meme"><span class="pre">fusionsid.image.Meme</span></a></span></span><a class="reference internal" href="_modules/fusionsid/image.html#GenerateMeme.brazzers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.GenerateMeme.brazzers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the brazzers meme</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>image_url</strong> – (str) : The image you want to use for the meme</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.image.GenerateMeme.gun">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fusionsid.image.Meme" title="fusionsid.image.Meme"><span class="pre">fusionsid.image.Meme</span></a></span></span><a class="reference internal" href="_modules/fusionsid/image.html#GenerateMeme.gun"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.GenerateMeme.gun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the gun meme</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>image_url</strong> – (str) : The image you want to use for the meme</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.image.GenerateMeme.surprised">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">surprised</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fusionsid.image.Meme" title="fusionsid.image.Meme"><span class="pre">fusionsid.image.Meme</span></a></span></span><a class="reference internal" href="_modules/fusionsid/image.html#GenerateMeme.surprised"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.GenerateMeme.surprised" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the surprised meme</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – (str) : The text you want to use for the meme</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.image.GenerateMeme.trash">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fusionsid.image.Meme" title="fusionsid.image.Meme"><span class="pre">fusionsid.image.Meme</span></a></span></span><a class="reference internal" href="_modules/fusionsid/image.html#GenerateMeme.trash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.GenerateMeme.trash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the trash meme</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>image_url</strong> – (str) : The image you want to use for the meme</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.image.GenerateMeme.violence">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">violence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fusionsid.image.Meme" title="fusionsid.image.Meme"><span class="pre">fusionsid.image.Meme</span></a></span></span><a class="reference internal" href="_modules/fusionsid/image.html#GenerateMeme.violence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.GenerateMeme.violence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the violence meme</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – (str) : The text you want to use for the meme</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.image.GenerateMeme.wanted">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wanted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fusionsid.image.Meme" title="fusionsid.image.Meme"><span class="pre">fusionsid.image.Meme</span></a></span></span><a class="reference internal" href="_modules/fusionsid/image.html#GenerateMeme.wanted"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.GenerateMeme.wanted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the wanted meme</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>image_url</strong> – (str) : The image you want to use for the meme</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="fusionsid.image.Image">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fusionsid.image.</span></span><span class="sig-name descname"><span class="pre">Image</span></span><a class="reference internal" href="_modules/fusionsid/image.html#Image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.Image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.image.Image.random_meme">
+<span class="sig-name descname"><span class="pre">random_meme</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fusionsid/image.html#Image.random_meme"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.Image.random_meme" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.image.Image.qrcode">
+<span class="sig-name descname"><span class="pre">qrcode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fusionsid/image.html#Image.qrcode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.Image.qrcode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">qrcode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fusionsid.image.QRCode" title="fusionsid.image.QRCode"><span class="pre">fusionsid.image.QRCode</span></a></span></span><a class="reference internal" href="_modules/fusionsid/image.html#Image.qrcode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a qr code</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The qrcode</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#fusionsid.image.QRCode" title="fusionsid.image.QRCode">QRCode</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">random_meme</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#fusionsid.image.RandomMeme" title="fusionsid.image.RandomMeme"><span class="pre">fusionsid.image.RandomMeme</span></a></span></span><a class="reference internal" href="_modules/fusionsid/image.html#Image.random_meme"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a random meme from the subreddit: r/memes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The meme</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#fusionsid.image.RandomMeme" title="fusionsid.image.RandomMeme">RandomMeme</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="fusionsid.image.Meme">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fusionsid.image.</span></span><span class="sig-name descname"><span class="pre">Meme</span></span><a class="reference internal" href="_modules/fusionsid/image.html#Meme"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.Meme" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fusionsid.image.BaseImage" title="fusionsid.image.BaseImage"><code class="xref py py-class docutils literal notranslate"><span class="pre">fusionsid.image.BaseImage</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fusionsid.image.Meme.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datetime</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fusionsid.image.Meme.created_at" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>The time when the class was made</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="fusionsid.image.QRCode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fusionsid.image.</span></span><span class="sig-name descname"><span class="pre">QRCode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fusionsid/image.html#QRCode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.QRCode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fusionsid.image.BaseImage" title="fusionsid.image.BaseImage"><code class="xref py py-class docutils literal notranslate"><span class="pre">fusionsid.image.BaseImage</span></code></a></p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">qrcode</span> <span class="o">=</span> <span class="n">Image</span><span class="p">()</span><span class="o">.</span><span class="n">qrcode</span><span class="p">(</span><span class="s2">&quot;https://google.com&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">meme</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;qrcode.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>url (str) : The url that your making the meme for
+image_bytes (bytes) : The image in bytes
+created_at (datetime) : The time when the class was made</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="fusionsid.image.RandomMeme">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fusionsid.image.</span></span><span class="sig-name descname"><span class="pre">RandomMeme</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fusionsid/image.html#RandomMeme"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.image.RandomMeme" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fusionsid.image.BaseImage" title="fusionsid.image.BaseImage"><code class="xref py py-class docutils literal notranslate"><span class="pre">fusionsid.image.BaseImage</span></code></a></p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">meme</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Image</span><span class="p">()</span><span class="o">.</span><span class="n">random_meme</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">meme</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;meme.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>image_bytes (bytes) : The image in bytes
+title (str) : Title of the post
+upvotes (str) : How many upvotes the meme has
+author (str) : Author of the meme
+url (str) : Url to the reddit post
+ext (str) : The file extension (eg: png)
+json (Dict) : The json response from the api
+created_at (datetime.datetime) : The time when the class was made</p>
+</div></blockquote>
+<dl class="py property">
+<dt class="sig sig-object py" id="fusionsid.image.RandomMeme.author">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">author</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#fusionsid.image.RandomMeme.author" title="Permalink to this definition">¶</a></dt>
+<dd><p>Author of the post</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="fusionsid.image.RandomMeme.ext">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ext</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#fusionsid.image.RandomMeme.ext" title="Permalink to this definition">¶</a></dt>
+<dd><p>The file extension</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="fusionsid.image.RandomMeme.title">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#fusionsid.image.RandomMeme.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>The title of the meme</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="fusionsid.image.RandomMeme.upvotes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">upvotes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#fusionsid.image.RandomMeme.upvotes" title="Permalink to this definition">¶</a></dt>
+<dd><p>How many upvotes the meme has</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="fusionsid.image.RandomMeme.url">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#fusionsid.image.RandomMeme.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Url to the reddit post</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<hr class="docutils" />
+<div class="section" id="module-fusionsid.text">
+<span id="fusionsid-text-module"></span><h2>fusionsid.text module<a class="headerlink" href="#module-fusionsid.text" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="fusionsid.text.Text">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fusionsid.text.</span></span><span class="sig-name descname"><span class="pre">Text</span></span><a class="reference internal" href="_modules/fusionsid/text.html#Text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.text.Text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">text_to_binary(text</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Converts</span> <span class="pre">text</span> <span class="pre">to</span> <span class="pre">binary</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">text_to_hex(text</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Converts</span> <span class="pre">text</span> <span class="pre">to</span> <span class="pre">hex</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">binary_to_text(binary</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Converts</span> <span class="pre">binary</span> <span class="pre">to</span> <span class="pre">text</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">hex_to_text(hex</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Converts</span> <span class="pre">hex</span> <span class="pre">to</span> <span class="pre">text</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.text.Text.encrypt">
+<span class="sig-name descname"><span class="pre">encrypt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Encrypts</span> <span class="pre">text</span> <span class="pre">(Can</span> <span class="pre">not</span> <span class="pre">be</span> <span class="pre">decrypted</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fusionsid/text.html#Text.encrypt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.text.Text.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">password(text</span> <span class="pre">:</span> <span class="pre">str,</span> <span class="pre">length</span> <span class="pre">:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None)</span> <span class="pre">:</span> <span class="pre">Generates</span> <span class="pre">a</span> <span class="pre">password</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">expand(text</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Expands</span> <span class="pre">Text</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">drunkify(text</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Drunkifies</span> <span class="pre">Text</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">reverse(text</span> <span class="pre">:</span> <span class="pre">str)</span> <span class="pre">:</span> <span class="pre">Reverses</span> <span class="pre">Text</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.text.Text.binary_to_text">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">binary_to_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="reference internal" href="_modules/fusionsid/text.html#Text.binary_to_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.text.Text.binary_to_text" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>binary</strong> (<em>str</em>) – The binary you want to convert to text</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Text</span><span class="p">()</span><span class="o">.</span><span class="n">text_to_binary</span><span class="p">(</span><span class="n">binary</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.text.Text.drunkify">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">drunkify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="reference internal" href="_modules/fusionsid/text.html#Text.drunkify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.text.Text.drunkify" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>(</strong><strong>str</strong><strong>)</strong> (<em>text</em>) – </p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Text</span><span class="p">()</span><span class="o">.</span><span class="n">drunkify</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">encrypt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="reference internal" href="_modules/fusionsid/text.html#Text.encrypt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>(</strong><strong>str</strong><strong>)</strong> (<em>text</em>) – </p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Text</span><span class="p">()</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.text.Text.expand">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="reference internal" href="_modules/fusionsid/text.html#Text.expand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.text.Text.expand" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong><strong>str</strong><strong>)</strong> (<em>text</em>) – </p></li>
+<li><p><strong>Optional</strong><strong>)</strong> (<em>space</em><em> (</em><em>str</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Text</span><span class="p">()</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.text.Text.hex_to_text">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hex_to_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="reference internal" href="_modules/fusionsid/text.html#Text.hex_to_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.text.Text.hex_to_text" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hex</strong> (<em>str</em>) – The hex you want to convert to text</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Text</span><span class="p">()</span><span class="o">.</span><span class="n">hext_to_text</span><span class="p">(</span><span class="nb">hex</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.text.Text.password">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="reference internal" href="_modules/fusionsid/text.html#Text.password"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.text.Text.password" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong><strong>str</strong><strong>)</strong> (<em>text</em>) – </p></li>
+<li><p><strong>Optional</strong><strong>)</strong> (<em>length</em><em> (</em><em>int</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Text</span><span class="p">()</span><span class="o">.</span><span class="n">password</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">8</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.text.Text.reverse">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="reference internal" href="_modules/fusionsid/text.html#Text.reverse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.text.Text.reverse" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>(</strong><strong>str</strong><strong>)</strong> (<em>text</em>) – </p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Text</span><span class="p">()</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.text.Text.text_to_binary">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">text_to_binary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="reference internal" href="_modules/fusionsid/text.html#Text.text_to_binary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.text.Text.text_to_binary" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>(</strong><strong>str</strong><strong>)</strong> (<em>text</em>) – </p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Text</span><span class="p">()</span><span class="o">.</span><span class="n">text_to_binary</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fusionsid.text.Text.text_to_hex">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">text_to_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="reference internal" href="_modules/fusionsid/text.html#Text.text_to_hex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.text.Text.text_to_hex" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>(</strong><strong>str</strong><strong>)</strong> (<em>text</em>) – </p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Text</span><span class="p">()</span><span class="o">.</span><span class="n">text_to_hex</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<hr class="docutils" />
+<div class="section" id="module-fusionsid">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-fusionsid" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="fusionsid.endpoints">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fusionsid.</span></span><span class="sig-name descname"><span class="pre">endpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="reference internal" href="_modules/fusionsid.html#endpoints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.endpoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of api endpoints</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fusionsid.stats">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fusionsid.</span></span><span class="sig-name descname"><span class="pre">stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="reference internal" href="_modules/fusionsid.html#stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusionsid.stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stats about the api</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="index.html" class="btn btn-neutral float-left" title="FusionSidAPI-py" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Siddhesh Zantye.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
