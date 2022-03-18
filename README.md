@@ -1,5 +1,4 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/fusionsid/fusionsidapi.py/badge)](https://www.codefactor.io/repository/github/fusionsid/fusionsidapi.py)
-
+[![CodeFactor](https://img.shields.io/codefactor/grade/github/FusionSid/FusionSidAPI.py?style=for-the-badge)](https://www.codefactor.io/repository/github/fusionsid/fusionsidapi.py)
 [![Downloads](https://img.shields.io/pypi/dd/fusionsidsapi?style=for-the-badge)](https://pypi.org/project/fusionsidsapi/)
 [![PyPi-Version](https://img.shields.io/pypi/v/fusionsidsapi?style=for-the-badge)](https://pypi.org/project/fusionsidsapi/)
 
@@ -16,7 +15,7 @@ You can install this library from PyPi: [Link](https://pypi.org/project/fusionsi
 
 **Install with pip:**
 ```py
-pip install -U fusionsidsapi
+pip install fusionsidsapi
 ```
 
 ---
@@ -66,3 +65,6 @@ loop.run_until_complete(main())
 Discord: `FusionSid#3645`
 
 [My Github](https://github.com/FusionSid/)
+
+## Changelog:
+You can checkout the changes per version in [CHANGELOG.txt](https://github.com/FusionSid/FusionSidAPI.py/blob/master/CHANGELOG.txt)
