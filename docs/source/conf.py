@@ -1,6 +1,6 @@
 import os
 import sys
-
+# from fusionsid import *
 sys.path.insert(0, os.path.abspath('..'))
 
 project = 'FusionSidAPI.py'
@@ -19,6 +19,6 @@ templates_path = ['_templates']
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-# html_theme = 'renku'
+html_theme = 'renku'
 
 html_static_path = ['_static']

@@ -5,7 +5,7 @@ from .errors import *
 class Fun():
     """
     A bunch of Fun functions
-    ----
+    ------------------------
 
     Methods
     -------
