@@ -3,8 +3,6 @@ import sys
 
 sys.path.insert(0, os.path.abspath('..'))
 
-from fusionsid import *
-
 project = 'FusionSidAPI.py'
 copyright = '2022, Siddhesh Zantye'
 author = 'Siddhesh Zantye'
