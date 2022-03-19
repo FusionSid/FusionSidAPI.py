@@ -5,6 +5,15 @@ class Decorators:
 
     @classmethod
     def compliment(cls, *args, **kwargs):
+        """
+        Compliment Decorator
+        Putting this above a function will print a compliment before the function is run
+
+        Example:
+            >>> @Decorators.compliment()
+                async def main():
+                    pass
+        """
         def wrapper(func):
             @functools.wraps(func)
             async def wrapped(*args, **kwargs):
@@ -16,6 +25,15 @@ class Decorators:
 
     @classmethod
     def fact(cls, *args, **kwargs):
+        """
+        Fact Decorator
+        Putting this above a function will print a fact before the function is run
+
+        Example:
+            >>> @Decorators.fact()
+                async def main():
+                    pass
+        """
         def wrapper(func):
             @functools.wraps(func)
             async def wrapped(*args, **kwargs):
@@ -27,6 +45,15 @@ class Decorators:
 
     @classmethod
     def roast(cls, *args, **kwargs):
+        """
+        Roast Decorator
+        Putting this above a function will print a roast before the function is run
+
+        Example:
+            >>> @Decorators.roast()
+                async def main():
+                    pass
+        """
         def wrapper(func):
             @functools.wraps(func)
             async def wrapped(*args, **kwargs):
@@ -38,6 +65,15 @@ class Decorators:
 
     @classmethod
     def truth(cls, *args, **kwargs):
+        """
+        Truth Decorator
+        Putting this above a function will print a truth before the function is run
+
+        Example:
+            >>> @Decorators.truth()
+                async def main():
+                    pass
+        """
         def wrapper(func):
             @functools.wraps(func)
             async def wrapped(*args, **kwargs):
@@ -49,6 +85,15 @@ class Decorators:
 
     @classmethod
     def dare(cls, *args, **kwargs):
+        """
+        Dare Decorator
+        Putting this above a function will print a dare before the function is run
+
+        Example:
+            >>> @Decorators.dare()
+                async def main():
+                    pass
+        """
         def wrapper(func):
             @functools.wraps(func)
             async def wrapped(*args, **kwargs):
