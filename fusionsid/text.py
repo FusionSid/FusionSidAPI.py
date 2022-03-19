@@ -1,12 +1,11 @@
 from .http import HTTPClient
 from typing import Dict
-from .errors import *
 
 
 class Text():
     """
     A bunch of Text functions
-    ----
+    -------------------------
 
     Methods
     -------
@@ -32,9 +31,9 @@ class Text():
 
     async def text_to_binary(self, text : str) -> Dict:
         """
-        Args
-        -----
-            text (str) : The text you want to convert
+        Parameters
+        ----------
+            :param text (str) : The text you want to convert
 
         Example
         -------
@@ -48,9 +47,9 @@ class Text():
 
     async def text_to_hex(self, text : str) -> Dict:
         """
-        Args
+        Parameters
         -----
-            text (str) : The text you want to convert
+            :param text (str) : The text you want to convert
 
         Example
         -------
@@ -63,8 +62,8 @@ class Text():
 
     async def binary_to_text(self, binary : str) -> Dict:
         """
-        Args:
-            binary (str) : The binary you want to convert to text
+        Parameters
+            :param binary (str) : The binary you want to convert to text
 
         Example
         -------
@@ -77,8 +76,8 @@ class Text():
 
     async def hex_to_text(self, hex : str) -> Dict:
         """
-        Args:
-            hex (str) : The hex you want to convert to text
+        Parameters
+            :param hex (str) : The hex you want to convert to text
 
         Example
         -------
@@ -89,15 +88,15 @@ class Text():
         return data["text"]
     
 
-    async def encrypt(self, text : str) -> Dict:
+    async def hash(self, text : str) -> Dict:
         """
-        Args
+        Parameters
         -----
-            text (str) : The text you want to convert
+            :param text (str) : The text you want to hash
 
         Example
         -------
-            >>> print(await Text().encrypt(text="Hello"))
+            >>> print(await Text().hash(text="Hello"))
         """
         data = await HTTPClient().get_json(f"""encrypt?text={text}""")
         
@@ -106,10 +105,10 @@ class Text():
 
     async def password(self, text : str, length : int = 8) -> Dict:
         """
-        Args
+        Parameters
         -----
-            text (str) : The text you want to convert
-            length (int Optional) : The length of the password
+            :param text (str) : The text you want to convert
+            :param length (int Optional) : The length of the password
 
         Example
         -------
@@ -122,10 +121,10 @@ class Text():
 
     async def expand(self, text : str, space : int = 5) -> Dict:
         """
-        Args
+        Parameters
         -----
-            text (str) : The text you want to convert
-            space (str Optional) : The space between each letter
+            :param text (str) : The text you want to convert
+            :param space (str Optional) : The space between each letter
             
         Example
         -------
@@ -138,9 +137,9 @@ class Text():
     
     async def reverse(self, text : str) -> Dict:
         """
-        Args
+        Parameters
         -----
-            text (str) : The text you want to convert
+            :param text (str) : The text you want to convert
 
         Example
         -------
@@ -153,9 +152,9 @@ class Text():
     
     async def drunkify(self, text : str) -> Dict:
         """
-        Args
+        Parameters
         -----
-            text (str) : The text you want to convert
+            :param text (str) : The text you want to convert
 
         Example
         -------
@@ -165,6 +164,3 @@ class Text():
         data = await HTTPClient().get_json(f"""drunkify?text={text}""")
 
         return data["text"]
-    
-
-    

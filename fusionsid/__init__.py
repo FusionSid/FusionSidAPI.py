@@ -1,8 +1,11 @@
-from fusionsid.image import *
-from fusionsid.fun import * 
-from fusionsid.errors import *
-from fusionsid.text import *
-from fusionsid.http import *
+from typing import Dict
+
+from fusionsid.errors import Error, ImageNotGenerated
+from fusionsid.fun import Fun
+from fusionsid.http import HTTPClient
+from fusionsid.image import BaseImage, RandomMeme, QRCode, Image, Meme, GenerateMeme
+from fusionsid.text import Text
+
    
 """
 FusionSidAPI
@@ -16,6 +19,7 @@ __version__ = "0.0.7"
 __url__ = "https://fusionsidapi.herokuapp.com"
 __github__ = "https://github.com/FusionSid/FusionSidAPI.py"
 __api_github__ = "https://github.com/FusionSid/FusionSidsAPI"
+
 
 async def stats(json=False) -> Dict:
     """
@@ -32,6 +36,7 @@ async def stats(json=False) -> Dict:
         return f"{api_stats}\n\n{api_system_stats}"
 
     return data
+
 
 async def endpoints(json=False) -> Dict:
     """

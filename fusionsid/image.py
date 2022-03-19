@@ -1,7 +1,9 @@
-from .http import HTTPClient
 from datetime import datetime
+
 import aiofiles
-from .errors import *
+
+from .http import HTTPClient
+from .errors import ImageNotGenerated
 
 class BaseImage:
     """
@@ -192,8 +194,8 @@ class GenerateMeme():
         """
         Generates the abandon meme
 
-        Args:
-            text : (str) : The text you want to use for the meme
+        Parameters
+            :param text : (str) : The text you want to use for the meme
 
         """
         image_bytes = await HTTPClient().get_image(f"abandon?text={text.replace(' ', '+')}")
@@ -204,8 +206,8 @@ class GenerateMeme():
         """
         Generates the aborted meme
 
-        Args:
-            image_url : (str) : The image you want to use for the meme
+        Parameters
+            :param image_url : (str) : The image you want to use for the meme
 
         """
         image_bytes = await HTTPClient().get_image(f"aborted?image_url={image_url}")
@@ -216,8 +218,8 @@ class GenerateMeme():
         """
         Generates the aborted meme
 
-        Args:
-            image_url : (str) : The image you want to use for the meme
+        Parameters
+            :param image_url : (str) : The image you want to use for the meme
 
         """
         image_bytes = await HTTPClient().get_image(f"affect?image_url={image_url}")
@@ -228,8 +230,8 @@ class GenerateMeme():
         """
         Generates the armor meme
 
-        Args:
-            text : (str) : The text you want to use for the meme
+        Parameters
+            :param text : (str) : The text you want to use for the meme
 
         """
         image_bytes = await HTTPClient().get_image(f"armor?text={text.replace(' ', '+')}")
@@ -240,8 +242,8 @@ class GenerateMeme():
         """
         Generates the bongocat meme
 
-        Args:
-            image_url : (str) : The image you want to use for the meme
+        Parameters
+            :param image_url : (str) : The image you want to use for the meme
 
         """
         image_bytes = await HTTPClient().get_image(f"bongocat?image_url={image_url}")
@@ -252,8 +254,8 @@ class GenerateMeme():
         """
         Generates the brazzers meme
 
-        Args:
-            image_url : (str) : The image you want to use for the meme
+        Parameters
+            :param image_url : (str) : The image you want to use for the meme
 
         """
         image_bytes = await HTTPClient().get_image(f"brazzers?image_url={image_url}")
@@ -264,8 +266,8 @@ class GenerateMeme():
         """
         Generates the gun meme
 
-        Args:
-            image_url : (str) : The image you want to use for the meme
+        Parameters
+            :param image_url : (str) : The image you want to use for the meme
 
         """
         image_bytes = await HTTPClient().get_image(f"gun?image_url={image_url}")
@@ -276,8 +278,8 @@ class GenerateMeme():
         """
         Generates the surprised meme
 
-        Args:
-            text : (str) : The text you want to use for the meme
+        Parameters
+            :param text : (str) : The text you want to use for the meme
 
         """
         image_bytes = await HTTPClient().get_image(f"surprised?text={text.replace(' ', '+')}")
@@ -288,8 +290,8 @@ class GenerateMeme():
         """
         Generates the trash meme
 
-        Args:
-            image_url : (str) : The image you want to use for the meme
+        Parameters
+            :param image_url : (str) : The image you want to use for the meme
 
         """
         image_bytes = await HTTPClient().get_image(f"trash?image_url={image_url}")
@@ -300,8 +302,8 @@ class GenerateMeme():
         """
         Generates the violence meme
 
-        Args:
-            text : (str) : The text you want to use for the meme
+        Parameters
+            :param text : (str) : The text you want to use for the meme
 
         """
         image_bytes = await HTTPClient().get_image(f"violence?text={text.replace(' ', '+')}")
@@ -312,8 +314,8 @@ class GenerateMeme():
         """
         Generates the wanted meme
 
-        Args:
-            image_url : (str) : The image you want to use for the meme
+        Parameters
+            :param image_url : (str) : The image you want to use for the meme
 
         """
         image_bytes = await HTTPClient().get_image(f"wanted?image_url={image_url}")

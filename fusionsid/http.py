@@ -9,8 +9,8 @@ class HTTPClient:
         """
         This function makes a get request to a url and returns the image
 
-        Args:
-            url (str) : The url to make a request to
+        Parameters
+            :param url (str) : The url to make a request to
         
         Returns:
             bytes : The image
@@ -25,8 +25,8 @@ class HTTPClient:
         """
         This function makes a get request to a url and returns the image
 
-        Args:
-            url (str) : The url to make a request to
+        Parameters
+           :param url (str) : The url to make a request to
         
         Returns:
             bytes : The image
@@ -41,9 +41,9 @@ class HTTPClient:
         """
         This function makes a GET request to a url and returns the json
 
-        Args:
-            url (str) : The url to make a request to
-            data (Dict, optional) : This is a dictionary of any extra params to send the request
+        Parameters
+            :param url (str) : The url to make a request to
+            :param data (Dict, optional) : This is a dictionary of any extra params to send the request
         
         Returns:
             Dict : The json response
@@ -60,9 +60,9 @@ class HTTPClient:
         """
         This function makes a GET request to a url and returns the json
 
-        Args:
-            url (str) : The url to make a request to
-            data (Dict, optional) : This is a dictionary of any extra params to send the request
+        Parameters
+            :param url (str) : The url to make a request to
+            :param data (Dict, optional) : This is a dictionary of any extra params to send the request
         
         Returns:
             Dict : The json response

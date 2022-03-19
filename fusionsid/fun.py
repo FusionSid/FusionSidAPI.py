@@ -1,6 +1,5 @@
 from .http import HTTPClient
 from typing import Dict, List
-from .errors import *
 
 class Fun():
     """
@@ -94,8 +93,8 @@ class Fun():
 
     async def reddit_search(self, keyword : str) -> List[Dict]:
         """
-        Args:
-            keyword (str) : The search query to search on reddit
+        Parameters
+            :param keyword (str) : The search query to search on reddit
 
         Example
         -------
