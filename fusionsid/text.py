@@ -29,6 +29,7 @@ class Text():
         
     """
 
+    @classmethod
     async def text_to_binary(self, text : str) -> Dict:
         """
         Parameters
@@ -45,6 +46,7 @@ class Text():
         return data["binary"]
 
 
+    @classmethod
     async def text_to_hex(self, text : str) -> Dict:
         """
         Parameters
@@ -60,6 +62,7 @@ class Text():
         return data["hex"]
 
 
+    @classmethod
     async def binary_to_text(self, binary : str) -> Dict:
         """
         Parameters
@@ -74,6 +77,7 @@ class Text():
         return data["text"]
 
 
+    @classmethod
     async def hex_to_text(self, hex : str) -> Dict:
         """
         Parameters
@@ -88,6 +92,7 @@ class Text():
         return data["text"]
     
 
+    @classmethod
     async def hash(self, text : str) -> Dict:
         """
         Parameters
@@ -103,6 +108,7 @@ class Text():
         return data["encrypted"]
     
 
+    @classmethod
     async def password(self, text : str, length : int = 8) -> Dict:
         """
         Parameters
@@ -119,6 +125,7 @@ class Text():
         return data["password"]
     
 
+    @classmethod
     async def expand(self, text : str, space : int = 5) -> Dict:
         """
         Parameters
@@ -134,7 +141,8 @@ class Text():
 
         return data["text"]
     
-    
+
+    @classmethod   
     async def reverse(self, text : str) -> Dict:
         """
         Parameters
@@ -150,6 +158,7 @@ class Text():
         return data["text"]
 
     
+    @classmethod
     async def drunkify(self, text : str) -> Dict:
         """
         Parameters

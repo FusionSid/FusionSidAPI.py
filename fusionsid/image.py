@@ -129,6 +129,8 @@ class Image():
         qrcode(url : str)
     
     """
+
+    @classmethod
     async def random_meme(self) -> RandomMeme:
         """
         Gets a random meme from the subreddit: r/memes
@@ -146,6 +148,7 @@ class Image():
         return RandomMeme(json=image, image_bytes=image_bytes)
 
 
+    @classmethod
     async def qrcode(self, url : str) -> QRCode:
         """
         Generates a qr code
@@ -190,6 +193,7 @@ class GenerateMeme():
         wanted(image_url : str) : Returns a `Meme`
     """
 
+    @classmethod
     async def abandon(self, text : str) -> Meme:
         """
         Generates the abandon meme
@@ -202,6 +206,7 @@ class GenerateMeme():
         return Meme(image_bytes)
     
 
+    @classmethod
     async def aborted(self, image_url : str) -> Meme:
         """
         Generates the aborted meme
@@ -214,6 +219,7 @@ class GenerateMeme():
         return Meme(image_bytes)
     
 
+    @classmethod
     async def affect(self, image_url : str) -> Meme:
         """
         Generates the aborted meme
@@ -226,6 +232,7 @@ class GenerateMeme():
         return Meme(image_bytes)
     
 
+    @classmethod
     async def armor(self, text : str) -> Meme:
         """
         Generates the armor meme
@@ -238,6 +245,7 @@ class GenerateMeme():
         return Meme(image_bytes)
     
 
+    @classmethod
     async def bongocat(self, image_url : str) -> Meme:
         """
         Generates the bongocat meme
@@ -250,6 +258,7 @@ class GenerateMeme():
         return Meme(image_bytes)
     
 
+    @classmethod
     async def brazzers(self, image_url : str) -> Meme:
         """
         Generates the brazzers meme
@@ -262,6 +271,7 @@ class GenerateMeme():
         return Meme(image_bytes)
     
 
+    @classmethod
     async def gun(self, image_url : str) -> Meme:
         """
         Generates the gun meme
@@ -274,6 +284,7 @@ class GenerateMeme():
         return Meme(image_bytes)
     
 
+    @classmethod
     async def surprised(self, text : str) -> Meme:
         """
         Generates the surprised meme
@@ -286,6 +297,7 @@ class GenerateMeme():
         return Meme(image_bytes)
     
 
+    @classmethod
     async def trash(self, image_url : str) -> Meme:
         """
         Generates the trash meme
@@ -298,6 +310,7 @@ class GenerateMeme():
         return Meme(image_bytes)
     
 
+    @classmethod
     async def violence(self, text : str) -> Meme:
         """
         Generates the violence meme
@@ -310,6 +323,7 @@ class GenerateMeme():
         return Meme(image_bytes)
     
 
+    @classmethod
     async def wanted(self, image_url : str) -> Meme:
         """
         Generates the wanted meme

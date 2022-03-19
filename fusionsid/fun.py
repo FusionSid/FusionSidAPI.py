@@ -19,6 +19,7 @@ class Fun():
         reddit_search(keyword : str) : Searches reddit
     """
 
+    @classmethod
     async def eightball(self) -> str:
         """
         Example
@@ -28,6 +29,7 @@ class Fun():
         data = await HTTPClient().get_json("8ball")
         return data["answer"]
     
+    @classmethod
     async def roast(self) -> str:
         """
         Example
@@ -37,6 +39,7 @@ class Fun():
         data = await HTTPClient().get_json("roast")
         return data["roast"]
     
+    @classmethod
     async def compliment(self) -> str:
         """
         Example
@@ -46,6 +49,7 @@ class Fun():
         data = await HTTPClient().get_json("compliment")
         return data["compliment"]
 
+    @classmethod
     async def truth(self) -> str:
         """
         Example
@@ -55,6 +59,7 @@ class Fun():
         data = await HTTPClient().get_json("truthordare")
         return data["truth"]
 
+    @classmethod
     async def dare(self) -> str:
         """
         Example
@@ -64,6 +69,7 @@ class Fun():
         data = await HTTPClient().get_json("truthordare")
         return data["dare"]
     
+    @classmethod
     async def truth_or_dare(self) -> Dict[str, str]:
         """
         Example
@@ -73,6 +79,7 @@ class Fun():
         data = await HTTPClient().get_json("truthordare")
         return data
 
+    @classmethod
     async def fact(self) -> str:
         """
         Example
@@ -82,6 +89,7 @@ class Fun():
         data = await HTTPClient().get_json("fact")
         return data["fact"]
 
+    @classmethod
     async def wordle(self) -> str:
         """
         Example
@@ -91,6 +99,7 @@ class Fun():
         data = await HTTPClient().get_json("wordle")
         return data["wordle"]
 
+    @classmethod
     async def reddit_search(self, keyword : str) -> List[Dict]:
         """
         Parameters

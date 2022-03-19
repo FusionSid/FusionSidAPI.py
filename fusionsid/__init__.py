@@ -1,5 +1,6 @@
 from typing import Dict
 
+from fusionsid.decorators import Decorators
 from fusionsid.errors import Error, ImageNotGenerated
 from fusionsid.fun import Fun
 from fusionsid.http import HTTPClient
@@ -19,6 +20,7 @@ __version__ = "0.0.7"
 __url__ = "https://fusionsidapi.herokuapp.com"
 __github__ = "https://github.com/FusionSid/FusionSidAPI.py"
 __api_github__ = "https://github.com/FusionSid/FusionSidsAPI"
+__docs__ = "https://fusionsid.github.io/FusionSidAPI.py/"
 
 
 async def stats(json=False) -> Dict:
