@@ -22,7 +22,14 @@ pip install fusionsidsapi
 
 # Need Help
 
-Even though there is so documentation for this package at the moment, each class and function has a doc string so if you need help with anything in the pacakge just use the built in python function `help()`
+### Docs
+This package now has [docs](https://fusionsid.github.io/FusionSidAPI.py/)
+
+https://fusionsid.github.io/FusionSidAPI.py/  
+or look in the Enviroments tab
+
+### Help Function
+Each class and function has a doc string so if you need help with anything in the pacakge just use the built in python function `help()`
 
 eg:
 ```py
@@ -48,8 +55,23 @@ import asyncio
 from fusionsid import Fun
 
 async def main():
-    roast = await Fun().roast()
+    roast = await Fun.roast()
     print(roast)
+
+loop = asyncio.new_event_loop()
+loop.run_until_complete(main())
+```
+
+This package also has some decorators (also in the examples folder) so if you want a complement before your code is run heres how:
+```py
+import asyncio
+from fusionsid import Decorators
+
+do_compliment = Decorators.compliment
+
+@do_compliment()
+async def main():
+    print("Wassup")
 
 loop = asyncio.new_event_loop()
 loop.run_until_complete(main())
@@ -68,3 +90,6 @@ Discord: `FusionSid#3645`
 
 ## Changelog:
 You can checkout the changes per version in [CHANGELOG.txt](https://github.com/FusionSid/FusionSidAPI.py/blob/master/CHANGELOG.txt)
+
+
+If you find a bug please make an issue, I will try my best to fix it :)

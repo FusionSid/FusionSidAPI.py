@@ -21,4 +21,5 @@ setup(
 
 # python3 setup.py bdist_wheel
 # twine upload dist/*
+# twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
 # sudo rm -rf ./build ./dist ./*egg-info

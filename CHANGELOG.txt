@@ -1,14 +1,22 @@
 Change Log
 ==========
 
+0.0.8 (19/03/2022)
+-------------------
+- Made most funtions `@classmethod`'s so you don't have to init the class 
+- Updated all doc strings to use `:param` so IDE's show it when typing
+- Fixed `import *` to import the actual stuff
+
+**Not code but the package now has [documentation](https://fusionsid.github.io/FusionSidAPI.py/)**
+
 0.0.7 (10/03/2022)
 -------------------
 - Added 9 Text convert functions in `fusionsid.Text()` 
-- Added reddit_search
+- Added `reddit_search`
 
 0.0.6 (09/03/2022)
 -------------------
-- Wordle answer
+- Wordle answers
 
 0.0.5 (08/03/2022)
 -------------------

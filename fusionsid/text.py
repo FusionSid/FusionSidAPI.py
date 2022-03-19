@@ -17,7 +17,7 @@ class Text():
 
         hex_to_text(hex : str) : Converts hex to text
         
-        encrypt(text : str) : Encrypts text (Can not be decrypted)
+        hash(text : str) : Hashes text
 
         password(text : str, length : str = None) : Generates a password
 
