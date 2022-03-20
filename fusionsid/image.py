@@ -1,5 +1,6 @@
 from datetime import datetime
 
+import aiohttp
 import aiofiles
 
 from .http import HTTPClient
@@ -34,7 +35,7 @@ class RandomMeme(BaseImage):
 
     Example
     -------
-        >>> meme = await Image().random_meme()
+        >>> meme = await Image.random_meme()
         >>> await meme.save('meme.png')
 
     Attrbutes
@@ -102,7 +103,7 @@ class QRCode(BaseImage):
 
     Example
     -------
-        >>> qrcode = Image().qrcode("https://google.com")
+        >>> qrcode = Image.qrcode("https://google.com")
         >>> await meme.save('qrcode.png')
 
     Attrbutes
@@ -127,6 +128,7 @@ class Image():
     -------
         random_meme()
         qrcode(url : str)
+        get_colors(filepath : str, show_hex : bool = True)
     
     """
 
@@ -159,6 +161,32 @@ class Image():
         qrcode = await HTTPClient().get_image(f"qrcode?link={url}")
         
         return QRCode(url, qrcode)
+
+    
+    @classmethod
+    async def get_colors(self, filepath : str, show_hex=True) -> dict:
+        """
+        Gets the most dominant color and color palette of an image
+
+        Parameters
+            :param: filepath (str) : The path to the file
+            :param: show_hex (bool) : By default the api will return hex values but if you want rgb set this to False
+
+        Example
+            >>> await Image.get_colors("snail.png", False)
+        """
+        try:
+            with open(filepath, 'rb') as f:
+                image_in_bytes = f.read()
+
+        except FileNotFoundError:
+            return "File not found"
+        
+        async with aiohttp.ClientSession() as session:
+            async with session.post(f"https://fusionsidapi.herokuapp.com/api/get_colors/?show_hex={show_hex}", data={'image': image_in_bytes}) as resp:
+                data = await resp.json()
+
+        return data
 
 
 class Meme(BaseImage):

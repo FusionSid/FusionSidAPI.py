@@ -38,7 +38,7 @@ class Text():
 
         Example
         -------
-            >>> print(await Text().text_to_binary(text="Hello"))
+            >>> print(await Text.text_to_binary(text="Hello"))
         """
 
         data = await HTTPClient().get_json(f"""texttobinary?text={text}""")
@@ -55,7 +55,7 @@ class Text():
 
         Example
         -------
-            >>> print(await Text().text_to_hex(text="Hello"))
+            >>> print(await Text.text_to_hex(text="Hello"))
         """
         data = await HTTPClient().get_json(f"""texttohex?text={text}""")
         
@@ -70,7 +70,7 @@ class Text():
 
         Example
         -------
-            >>> print(await Text().text_to_binary(binary=""))
+            >>> print(await Text.text_to_binary(binary=""))
         """
         data = await HTTPClient().get_json(f"""binarytotext?binary_text={binary}""")
         
@@ -85,7 +85,7 @@ class Text():
 
         Example
         -------
-            >>> print(await Text().hext_to_text(hex=""))
+            >>> print(await Text.hext_to_text(hex=""))
         """
         data = await HTTPClient().get_json(f"""hextotext?hex_text={hex}""")
 
@@ -101,7 +101,7 @@ class Text():
 
         Example
         -------
-            >>> print(await Text().hash(text="Hello"))
+            >>> print(await Text.hash(text="Hello"))
         """
         data = await HTTPClient().get_json(f"""encrypt?text={text}""")
         
@@ -118,7 +118,7 @@ class Text():
 
         Example
         -------
-            >>> print(await Text().password(text="Hello", length=8))
+            >>> print(await Text.password(text="Hello", length=8))
         """
         data = await HTTPClient().get_json(f"""password?text={text}?length={length}""")
 
@@ -135,7 +135,7 @@ class Text():
             
         Example
         -------
-            >>> print(await Text().expand(text="Hello", space=5))
+            >>> print(await Text.expand(text="Hello", space=5))
         """
         data = await HTTPClient().get_json(f"""expand?text={text}?space={space}""")
 
@@ -151,7 +151,7 @@ class Text():
 
         Example
         -------
-            >>> print(await Text().reverse(text="Hello"))
+            >>> print(await Text.reverse(text="Hello"))
         """
         data = await HTTPClient().get_json(f"""reverse?text={text}""")
 
@@ -167,7 +167,7 @@ class Text():
 
         Example
         -------
-            >>> print(await Text().drunkify(text="Hello"))
+            >>> print(await Text.drunkify(text="Hello"))
         """
     
         data = await HTTPClient().get_json(f"""drunkify?text={text}""")

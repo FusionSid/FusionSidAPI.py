@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+0.0.9 (20/03/2022)
+-------------------
+- Added `Image.get_colors()`
+- Get colors takes in a image and finds the most dominant color and the color palette
+- Fixed examples for most functions doc strings
+
 0.0.8 (19/03/2022)
 -------------------
 - Made most funtions `@classmethod`'s so you don't have to init the class 

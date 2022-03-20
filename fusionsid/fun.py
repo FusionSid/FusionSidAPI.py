@@ -24,7 +24,7 @@ class Fun():
         """
         Example
         -------
-            >>> print(await Fun().eightball())
+            >>> print(await Fun.eightball())
         """
         data = await HTTPClient().get_json("8ball")
         return data["answer"]
@@ -34,7 +34,7 @@ class Fun():
         """
         Example
         -------
-            >>> print(await Fun().roast())
+            >>> print(await Fun.roast())
         """
         data = await HTTPClient().get_json("roast")
         return data["roast"]
@@ -44,7 +44,7 @@ class Fun():
         """
         Example
         -------
-            >>> print(await Fun().compliment())
+            >>> print(await Fun.compliment())
         """
         data = await HTTPClient().get_json("compliment")
         return data["compliment"]
@@ -54,7 +54,7 @@ class Fun():
         """
         Example
         -------
-            >>> print(await Fun().truth())
+            >>> print(await Fun.truth())
         """
         data = await HTTPClient().get_json("truthordare")
         return data["truth"]
@@ -64,7 +64,7 @@ class Fun():
         """
         Example
         -------
-            >>> print(await Fun().dare())
+            >>> print(await Fun.dare())
         """
         data = await HTTPClient().get_json("truthordare")
         return data["dare"]
@@ -74,7 +74,7 @@ class Fun():
         """
         Example
         -------
-            >>> print(await Fun().truth_or_dare())
+            >>> print(await Fun.truth_or_dare())
         """
         data = await HTTPClient().get_json("truthordare")
         return data
@@ -84,7 +84,7 @@ class Fun():
         """
         Example
         -------
-            >>> print(await Fun().fact())
+            >>> print(await Fun.fact())
         """
         data = await HTTPClient().get_json("fact")
         return data["fact"]
@@ -94,7 +94,7 @@ class Fun():
         """
         Example
         -------
-            >>> print(await Fun().wordle())
+            >>> print(await Fun.wordle())
         """
         data = await HTTPClient().get_json("wordle")
         return data["wordle"]
@@ -107,7 +107,7 @@ class Fun():
 
         Example
         -------
-            >>> print(await Fun().reddit_search(keyword="Meme"))
+            >>> print(await Fun.reddit_search(keyword="Meme"))
         """
         data = await HTTPClient().get_json(f"""searchreddit?keyword={keyword}""")
         
