@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>fusionsid.decorators &mdash; FusionSidAPI.py 0.0.8 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> FusionSidAPI.py
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fusionsid.html">fusionsid package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FusionSidAPI.py</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../fusionsid.html">fusionsid</a> &raquo;</li>
+        
+      <li>fusionsid.decorators</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for fusionsid.decorators</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">from</span> <span class="nn">.fun</span> <span class="kn">import</span> <span class="n">Fun</span>
+
+<div class="viewcode-block" id="Decorators"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.decorators.Decorators">[docs]</a><span class="k">class</span> <span class="nc">Decorators</span><span class="p">:</span>
+
+<div class="viewcode-block" id="Decorators.compliment"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.decorators.Decorators.compliment">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">compliment</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compliment Decorator</span>
+<span class="sd">        Putting this above a function will print a compliment before the function is run</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; @Decorators.compliment()</span>
+<span class="sd">                async def main():</span>
+<span class="sd">                    pass</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+            <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+            <span class="k">async</span> <span class="k">def</span> <span class="nf">wrapped</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">((</span><span class="k">await</span> <span class="n">Fun</span><span class="o">.</span><span class="n">compliment</span><span class="p">()))</span>
+                <span class="k">return</span> <span class="k">await</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">wrapped</span>
+        <span class="k">return</span> <span class="n">wrapper</span></div>
+
+
+<div class="viewcode-block" id="Decorators.fact"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.decorators.Decorators.fact">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fact Decorator</span>
+<span class="sd">        Putting this above a function will print a fact before the function is run</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; @Decorators.fact()</span>
+<span class="sd">                async def main():</span>
+<span class="sd">                    pass</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+            <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+            <span class="k">async</span> <span class="k">def</span> <span class="nf">wrapped</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">((</span><span class="k">await</span> <span class="n">Fun</span><span class="p">()</span><span class="o">.</span><span class="n">fact</span><span class="p">()))</span>
+                <span class="k">return</span> <span class="k">await</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">wrapped</span>
+        <span class="k">return</span> <span class="n">wrapper</span></div>
+
+
+<div class="viewcode-block" id="Decorators.roast"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.decorators.Decorators.roast">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">roast</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Roast Decorator</span>
+<span class="sd">        Putting this above a function will print a roast before the function is run</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; @Decorators.roast()</span>
+<span class="sd">                async def main():</span>
+<span class="sd">                    pass</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+            <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+            <span class="k">async</span> <span class="k">def</span> <span class="nf">wrapped</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">((</span><span class="k">await</span> <span class="n">Fun</span><span class="o">.</span><span class="n">roast</span><span class="p">()))</span>
+                <span class="k">return</span> <span class="k">await</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">wrapped</span>
+        <span class="k">return</span> <span class="n">wrapper</span></div>
+
+
+<div class="viewcode-block" id="Decorators.truth"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.decorators.Decorators.truth">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">truth</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Truth Decorator</span>
+<span class="sd">        Putting this above a function will print a truth before the function is run</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; @Decorators.truth()</span>
+<span class="sd">                async def main():</span>
+<span class="sd">                    pass</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+            <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+            <span class="k">async</span> <span class="k">def</span> <span class="nf">wrapped</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">((</span><span class="k">await</span> <span class="n">Fun</span><span class="p">()</span><span class="o">.</span><span class="n">truth</span><span class="p">()))</span>
+                <span class="k">return</span> <span class="k">await</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">wrapped</span>
+        <span class="k">return</span> <span class="n">wrapper</span></div>
+
+
+<div class="viewcode-block" id="Decorators.dare"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.decorators.Decorators.dare">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">dare</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Dare Decorator</span>
+<span class="sd">        Putting this above a function will print a dare before the function is run</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; @Decorators.dare()</span>
+<span class="sd">                async def main():</span>
+<span class="sd">                    pass</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+            <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+            <span class="k">async</span> <span class="k">def</span> <span class="nf">wrapped</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">((</span><span class="k">await</span> <span class="n">Fun</span><span class="p">()</span><span class="o">.</span><span class="n">dare</span><span class="p">()))</span>
+                <span class="k">return</span> <span class="k">await</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">wrapped</span>
+        <span class="k">return</span> <span class="n">wrapper</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, Siddhesh Zantye.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
