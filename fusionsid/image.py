@@ -23,24 +23,32 @@ class BaseImage:
 
 
     async def save(self, path: str) -> None:
+        
         """
         Saves an image
         """
+        
         if self.image_bytes is None:
+        
             raise ImageNotGenerated
+        
         async with aiofiles.open(path, 'wb') as f:
             await f.write(self.image_bytes)
 
     
     async def show(self) -> None:
+        
         """
         Shows an image
         """
+        
         if self.image_bytes is None:
             raise ImageNotGenerated
+        
         image = img.open(BytesIO(self.image_bytes))
         image.show()
-        return
+        
+        return None
 
 
 class RandomMeme(BaseImage):
