@@ -2,9 +2,12 @@ from datetime import datetime
 
 import aiohttp
 import aiofiles
+from io import BytesIO
+from PIL import Image as img
 
 from .http import HTTPClient
 from .errors import ImageNotGenerated
+
 
 class BaseImage:
     """
@@ -18,6 +21,7 @@ class BaseImage:
     def __init__(self, image_bytes=None) -> None:
         self.image_bytes = image_bytes
 
+
     async def save(self, path: str) -> None:
         """
         Saves an image
@@ -26,6 +30,17 @@ class BaseImage:
             raise ImageNotGenerated
         async with aiofiles.open(path, 'wb') as f:
             await f.write(self.image_bytes)
+
+    
+    async def show(self) -> None:
+        """
+        Shows an image
+        """
+        if self.image_bytes is None:
+            raise ImageNotGenerated
+        image = img.open(BytesIO(self.image_bytes))
+        image.show()
+        return
 
 
 class RandomMeme(BaseImage):
@@ -198,8 +213,11 @@ class Meme(BaseImage):
     ----------
         created_at (datetime) : The time when the class was made
     """
-    def __init__(self):
+    def __init__(self, image_bytes):
         self.created_at = datetime.now()
+        super().__init__(
+            image_bytes=image_bytes
+        )
 
 class GenerateMeme():
     """
