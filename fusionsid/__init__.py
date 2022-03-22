@@ -16,7 +16,7 @@ An asynchronous api wrapper for [FusionSidAPI](https://fusionsidapi.herokuapp.co
 __title__ = "fusionsidapi"
 __license__ = "MIT"
 __author__ = "FusionSid"
-__version__ = "0.0.9"
+__version__ = "0.0.10"
 __url__ = "https://fusionsidapi.herokuapp.com"
 __github__ = "https://github.com/FusionSid/FusionSidAPI.py"
 __api_github__ = "https://github.com/FusionSid/FusionSidsAPI"

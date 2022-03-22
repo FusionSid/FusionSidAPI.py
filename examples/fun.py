@@ -2,16 +2,16 @@ import asyncio
 from fusionsid import Fun
 
 async def main():
-    roast = await Fun().roast()
+    roast = await Fun.roast()
     print(roast)
 
-    complement = await Fun().compliment()
+    complement = await Fun.compliment()
     print(complement)
     
-    fact = await Fun().fact()
+    fact = await Fun.fact()
     print(fact)
 
-    search = await Fun().reddit_search("discord bots")
+    search = await Fun.reddit_search("discord bots")
     print(search)
 
 loop = asyncio.new_event_loop()

@@ -6,7 +6,7 @@ async def main():
 
     print(await text_convert.text_to_binary("Hello"))
     
-    print(await text_convert.encrypt("lol"))
+    print(await text_convert.hash("lol"))
 
     print(await text_convert.binary_to_text("1101100 1101111 1101100"))
 
