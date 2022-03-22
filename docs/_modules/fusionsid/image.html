@@ -159,9 +159,12 @@
 
 <span class="kn">import</span> <span class="nn">aiohttp</span>
 <span class="kn">import</span> <span class="nn">aiofiles</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">img</span>
 
 <span class="kn">from</span> <span class="nn">.http</span> <span class="kn">import</span> <span class="n">HTTPClient</span>
 <span class="kn">from</span> <span class="nn">.errors</span> <span class="kn">import</span> <span class="n">ImageNotGenerated</span>
+
 
 <div class="viewcode-block" id="BaseImage"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.BaseImage">[docs]</a><span class="k">class</span> <span class="nc">BaseImage</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -175,14 +178,34 @@
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_bytes</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">image_bytes</span> <span class="o">=</span> <span class="n">image_bytes</span>
 
+
 <div class="viewcode-block" id="BaseImage.save"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.BaseImage.save">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Saves an image</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_bytes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        
+            <span class="k">raise</span> <span class="n">ImageNotGenerated</span>
+        
+        <span class="k">async</span> <span class="k">with</span> <span class="n">aiofiles</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">await</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_bytes</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="BaseImage.show"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.BaseImage.show">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Shows an image</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_bytes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">ImageNotGenerated</span>
-        <span class="k">async</span> <span class="k">with</span> <span class="n">aiofiles</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="k">await</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_bytes</span><span class="p">)</span></div></div>
+        
+        <span class="n">image</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_bytes</span><span class="p">))</span>
+        <span class="n">image</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        
+        <span class="k">return</span> <span class="kc">None</span></div></div>
 
 
 <div class="viewcode-block" id="RandomMeme"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.RandomMeme">[docs]</a><span class="k">class</span> <span class="nc">RandomMeme</span><span class="p">(</span><span class="n">BaseImage</span><span class="p">):</span>
@@ -355,8 +378,11 @@
 <span class="sd">    ----------</span>
 <span class="sd">        created_at (datetime) : The time when the class was made</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">created_at</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span></div>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_bytes</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">created_at</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">image_bytes</span><span class="o">=</span><span class="n">image_bytes</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="GenerateMeme"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme">[docs]</a><span class="k">class</span> <span class="nc">GenerateMeme</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
