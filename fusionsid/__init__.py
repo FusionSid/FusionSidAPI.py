@@ -4,7 +4,7 @@ from fusionsid.decorators import Decorators
 from fusionsid.errors import Error, ImageNotGenerated
 from fusionsid.fun import Fun
 from fusionsid.http import HTTPClient
-from fusionsid.image import BaseImage, RandomMeme, QRCode, Image, Meme, GenerateMeme
+from fusionsid.image import BaseImage, RandomMeme, QRCode, Image, Meme, GenerateMeme, FontImage
 from fusionsid.text import Text
 
    

@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Union
 
 import aiohttp
 import aiofiles
@@ -142,6 +143,22 @@ class QRCode(BaseImage):
         super().__init__(image_bytes=image_bytes)
 
 
+class FontImage(BaseImage):
+    """
+    FontConvertedImage
+    ----
+
+    Attributes
+    ----------
+        created_at (datetime) : The time when the class was made
+    """
+    def __init__(self, image_bytes):
+        self.created_at = datetime.now()
+        super().__init__(
+            image_bytes=image_bytes
+        )
+
+
 class Image():
     """
     Group of non meme generating image function
@@ -210,6 +227,31 @@ class Image():
                 data = await resp.json()
 
         return data
+
+    
+    @classmethod
+    async def font_convert(text : str, font_name : str, color : str = "black"):
+        list_of_fonts = await HTTPClient().get_json("fontconvert/list")
+        list_of_fonts = list_of_fonts["Font_List"]
+
+        if font_name not in list_of_fonts:
+            url = "https://fusionsidapi.herokuapp.com/api/fontconvert/list"
+            return print(f"Invalid font, go to {url} to get a list of them or use the font list function")
+
+        url = f"""fontconvert?text={text}&font={font_name}&color={color}"""
+        image_bytes = await HTTPClient().get_image(url)
+
+        return FontImage(image_bytes)
+
+    
+    async def font_list(print_all : bool = False) -> list:
+        list_of_fonts = await HTTPClient().get_json("fontconvert/list")
+        list_of_fonts = list_of_fonts["Font_List"]
+
+        if print_all:
+            print("\n".join(list_of_fonts))
+        else:
+            return list_of_fonts
 
 
 class Meme(BaseImage):
