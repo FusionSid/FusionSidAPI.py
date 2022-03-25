@@ -230,7 +230,19 @@ class Image():
 
     
     @classmethod
-    async def font_convert(text : str, font_name : str, color : str = "black"):
+    async def font_convert(self, text : str, font_name : str, color : str = "black") -> FontImage:
+        """
+        Converts text to a font you choose
+
+        Parameters
+            :param text (str): The text you are converting
+            :param font_name (str): The font you are converting to, 
+                Use the Image.font_list() function to get a list of them
+            :param color (str, Optional): The color of the text, Defaults to black
+
+        Returns
+            FontImage: The image of the font
+        """
         list_of_fonts = await HTTPClient().get_json("fontconvert/list")
         list_of_fonts = list_of_fonts["Font_List"]
 
@@ -244,14 +256,23 @@ class Image():
         return FontImage(image_bytes)
 
     
-    async def font_list(print_all : bool = False) -> list:
+    @classmethod
+    async def font_list(self, print_all : bool = False) -> list:
+        """
+        Prints a list of all the fonts that the api supports converting to
+
+        Parameters
+            :param print_all (bool, Optional): setting this to true will print all the fonts in console
+
+        Returns
+            list : The list of fonts
+        """
         list_of_fonts = await HTTPClient().get_json("fontconvert/list")
         list_of_fonts = list_of_fonts["Font_List"]
 
         if print_all:
             print("\n".join(list_of_fonts))
-        else:
-            return list_of_fonts
+        return list_of_fonts
 
 
 class Meme(BaseImage):

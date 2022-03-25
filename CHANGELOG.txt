@@ -1,6 +1,24 @@
 Change Log
 ==========
 
+0.0.11 (25/03/2022)
+-------------------
+- Added font converting
+- There are 1969 fonts to choose from
+    Haha I know im so funny
+- New Things Added:
+
+    `(class) FontImage`
+
+    `(method) Image.font_list: (print_all: bool = False) -> list`
+
+    `(method) Image.font_convert: (text: str, font_name: str, color: str = "black") -> FontImage`
+
+0.0.10 (22/03/2022)
+-------------------
+- Changed up readme, docs and examples
+- Not a big update
+
 0.0.9 (20/03/2022)
 -------------------
 - Added `Image.get_colors()`
