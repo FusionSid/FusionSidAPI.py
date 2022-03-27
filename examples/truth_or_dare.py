@@ -1,10 +1,11 @@
 import asyncio
 from fusionsid import Fun
 
+
 async def main():
     # Prints a truth
     print(await Fun.truth())
-   
+
     # Prints a dare
     print(await Fun.dare())
 

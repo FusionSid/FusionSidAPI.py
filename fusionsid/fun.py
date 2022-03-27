@@ -1,7 +1,8 @@
 from .http import HTTPClient
 from typing import Dict, List
 
-class Fun():
+
+class Fun:
     """
     A bunch of Fun functions
     ------------------------
@@ -28,7 +29,7 @@ class Fun():
         """
         data = await HTTPClient().get_json("8ball")
         return data["answer"]
-    
+
     @classmethod
     async def roast(self) -> str:
         """
@@ -38,7 +39,7 @@ class Fun():
         """
         data = await HTTPClient().get_json("roast")
         return data["roast"]
-    
+
     @classmethod
     async def compliment(self) -> str:
         """
@@ -68,7 +69,7 @@ class Fun():
         """
         data = await HTTPClient().get_json("truthordare")
         return data["dare"]
-    
+
     @classmethod
     async def truth_or_dare(self) -> Dict[str, str]:
         """
@@ -100,7 +101,7 @@ class Fun():
         return data["wordle"]
 
     @classmethod
-    async def reddit_search(self, keyword : str) -> List[Dict]:
+    async def reddit_search(self, keyword: str) -> List[Dict]:
         """
         Parameters
             :param keyword (str) : The search query to search on reddit
@@ -110,5 +111,5 @@ class Fun():
             >>> print(await Fun.reddit_search(keyword="Meme"))
         """
         data = await HTTPClient().get_json(f"""searchreddit?keyword={keyword}""")
-        
+
         return data
