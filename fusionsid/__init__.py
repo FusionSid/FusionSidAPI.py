@@ -21,14 +21,14 @@ FusionSidAPI
 An asynchronous api wrapper for [FusionSidAPI](https://fusionsidapi.herokuapp.com).
 """
 
-__title__ = "fusionsidapi"
 __license__ = "MIT"
+__version__ = "1.0.0"
 __author__ = "FusionSid"
-__version__ = "0.0.11"
+__title__ = "fusionsidapi"
 __url__ = "https://fusionsidapi.herokuapp.com"
+__docs__ = "https://fusionsid.github.io/FusionSidAPI.py/"
 __github__ = "https://github.com/FusionSid/FusionSidAPI.py"
 __api_github__ = "https://github.com/FusionSid/FusionSidsAPI"
-__docs__ = "https://fusionsid.github.io/FusionSidAPI.py/"
 
 
 async def stats(json=False) -> Dict:
