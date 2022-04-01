@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+
+1.0.0 (1/04/2022)
+-------------------
+- Added `pil` method to the Image class 
+- Added `save_bytesio` to Image class
+- Changed `self` param in classmethods to `cls`
+- Updated examples in doc strings
+
 0.0.11 (25/03/2022)
 -------------------
 - Added font converting

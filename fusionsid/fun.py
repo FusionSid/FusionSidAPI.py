@@ -21,7 +21,7 @@ class Fun:
     """
 
     @classmethod
-    async def eightball(self) -> str:
+    async def eightball(cls) -> str:
         """
         Example
         -------
@@ -31,7 +31,7 @@ class Fun:
         return data["answer"]
 
     @classmethod
-    async def roast(self) -> str:
+    async def roast(cls) -> str:
         """
         Example
         -------
@@ -41,7 +41,7 @@ class Fun:
         return data["roast"]
 
     @classmethod
-    async def compliment(self) -> str:
+    async def compliment(cls) -> str:
         """
         Example
         -------
@@ -51,7 +51,7 @@ class Fun:
         return data["compliment"]
 
     @classmethod
-    async def truth(self) -> str:
+    async def truth(cls) -> str:
         """
         Example
         -------
@@ -61,7 +61,7 @@ class Fun:
         return data["truth"]
 
     @classmethod
-    async def dare(self) -> str:
+    async def dare(cls) -> str:
         """
         Example
         -------
@@ -71,7 +71,7 @@ class Fun:
         return data["dare"]
 
     @classmethod
-    async def truth_or_dare(self) -> Dict[str, str]:
+    async def truth_or_dare(cls) -> Dict[str, str]:
         """
         Example
         -------
@@ -81,7 +81,7 @@ class Fun:
         return data
 
     @classmethod
-    async def fact(self) -> str:
+    async def fact(cls) -> str:
         """
         Example
         -------
@@ -91,7 +91,7 @@ class Fun:
         return data["fact"]
 
     @classmethod
-    async def wordle(self) -> str:
+    async def wordle(cls) -> str:
         """
         Example
         -------
@@ -101,7 +101,7 @@ class Fun:
         return data["wordle"]
 
     @classmethod
-    async def reddit_search(self, keyword: str) -> List[Dict]:
+    async def reddit_search(cls, keyword: str) -> List[Dict]:
         """
         Parameters
             :param keyword (str) : The search query to search on reddit

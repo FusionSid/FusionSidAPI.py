@@ -187,7 +187,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Text.text_to_binary"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.text.Text.text_to_binary">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">text_to_binary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">text_to_binary</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -203,7 +203,7 @@
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;binary&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Text.text_to_hex"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.text.Text.text_to_hex">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">text_to_hex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">text_to_hex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
 <span class="sd">        -----</span>
@@ -218,7 +218,7 @@
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;hex&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Text.binary_to_text"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.text.Text.binary_to_text">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">binary_to_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">binary</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">binary_to_text</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">binary</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
 <span class="sd">            :param binary (str) : The binary you want to convert to text</span>
@@ -232,7 +232,7 @@
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Text.hex_to_text"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.text.Text.hex_to_text">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">hex_to_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">hex</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">hex_to_text</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">hex</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
 <span class="sd">            :param hex (str) : The hex you want to convert to text</span>
@@ -246,7 +246,7 @@
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Text.hash"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.text.Text.hash">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">hash</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">hash</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
 <span class="sd">        -----</span>
@@ -261,7 +261,7 @@
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;encrypted&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Text.password"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.text.Text.password">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">password</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">password</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
 <span class="sd">        -----</span>
@@ -277,7 +277,7 @@
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Text.expand"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.text.Text.expand">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">space</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">space</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
 <span class="sd">        -----</span>
@@ -293,7 +293,7 @@
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Text.reverse"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.text.Text.reverse">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
 <span class="sd">        -----</span>
@@ -308,7 +308,7 @@
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Text.drunkify"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.text.Text.drunkify">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">drunkify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">drunkify</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
 <span class="sd">        -----</span>

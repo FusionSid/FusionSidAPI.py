@@ -1,9 +1,9 @@
+from io import BytesIO
 from datetime import datetime
-from typing import Union
 
+import PIL
 import aiohttp
 import aiofiles
-from io import BytesIO
 from PIL import Image as img
 
 from .http import HTTPClient
@@ -49,6 +49,34 @@ class BaseImage:
         image.show()
 
         return None
+
+    async def save_bytesio(self) -> BytesIO:
+
+        """
+        Saves the image to BytesIO
+
+        Returns
+            BytesIO
+        """
+
+        if self.image_bytes is None:
+            raise ImageNotGenerated
+
+        image = BytesIO(self.image_bytes)
+
+        return image
+
+    async def pil(self) -> PIL.Image.Image:
+
+        """
+        Converts the image to a PIL.Image.Image object and returns it
+
+        Returns
+            PIL.Image.Image
+        """
+
+        image = img.open(BytesIO(self.image_bytes))
+        return image
 
 
 class RandomMeme(BaseImage):
@@ -167,7 +195,7 @@ class Image:
     """
 
     @classmethod
-    async def random_meme(self) -> RandomMeme:
+    async def random_meme(cls) -> RandomMeme:
         """
         Gets a random meme from the subreddit: r/memes
 
@@ -184,7 +212,7 @@ class Image:
         return RandomMeme(json=image, image_bytes=image_bytes)
 
     @classmethod
-    async def qrcode(self, url: str) -> QRCode:
+    async def qrcode(cls, url: str) -> QRCode:
         """
         Generates a qr code
 
@@ -196,7 +224,7 @@ class Image:
         return QRCode(url, qrcode)
 
     @classmethod
-    async def get_colors(self, filepath: str, show_hex=True) -> dict:
+    async def get_colors(cls, filepath: str, show_hex=True) -> dict:
         """
         Gets the most dominant color and color palette of an image
 
@@ -225,7 +253,7 @@ class Image:
 
     @classmethod
     async def font_convert(
-        self, text: str, font_name: str, color: str = "black"
+        cls, text: str, font_name: str, color: str = "black"
     ) -> FontImage:
         """
         Converts text to a font you choose
@@ -254,7 +282,7 @@ class Image:
         return FontImage(image_bytes)
 
     @classmethod
-    async def font_list(self, print_all: bool = False) -> list:
+    async def font_list(cls, print_all: bool = False) -> list:
         """
         Prints a list of all the fonts that the api supports converting to
 
@@ -295,20 +323,31 @@ class GenerateMeme:
     Methods
     -------
         abandon(text : str) : Returns a `Meme`
-        aborted(image_url : str) : Returns a `Meme`
-        affect(image_url : str) : Returns a `Meme`
+
         armor(text : str) : Returns a `Meme`
-        bongocat(image_url : str) : Returns a `Meme`
-        brazzers(image_url : str) : Returns a `Meme`
-        gun(image_url : str) : Returns a `Meme`
+
         surprised(text : str) : Returns a `Meme`
-        trash(image_url : str) : Returns a `Meme`
+
         violence(text : str) : Returns a `Meme`
+
+        bongocat(image_url : str) : Returns a `Meme`
+
+        brazzers(image_url : str) : Returns a `Meme`
+
+        gun(image_url : str) : Returns a `Meme`
+
+        trash(image_url : str) : Returns a `Meme`
+
+        aborted(image_url : str) : Returns a `Meme`
+
+        affect(image_url : str) : Returns a `Meme`
+
         wanted(image_url : str) : Returns a `Meme`
+
     """
 
     @classmethod
-    async def abandon(self, text: str) -> Meme:
+    async def abandon(cls, text: str) -> Meme:
         """
         Generates the abandon meme
 
@@ -322,31 +361,7 @@ class GenerateMeme:
         return Meme(image_bytes)
 
     @classmethod
-    async def aborted(self, image_url: str) -> Meme:
-        """
-        Generates the aborted meme
-
-        Parameters
-            :param image_url : (str) : The image you want to use for the meme
-
-        """
-        image_bytes = await HTTPClient().get_image(f"aborted?image_url={image_url}")
-        return Meme(image_bytes)
-
-    @classmethod
-    async def affect(self, image_url: str) -> Meme:
-        """
-        Generates the aborted meme
-
-        Parameters
-            :param image_url : (str) : The image you want to use for the meme
-
-        """
-        image_bytes = await HTTPClient().get_image(f"affect?image_url={image_url}")
-        return Meme(image_bytes)
-
-    @classmethod
-    async def armor(self, text: str) -> Meme:
+    async def armor(cls, text: str) -> Meme:
         """
         Generates the armor meme
 
@@ -360,43 +375,7 @@ class GenerateMeme:
         return Meme(image_bytes)
 
     @classmethod
-    async def bongocat(self, image_url: str) -> Meme:
-        """
-        Generates the bongocat meme
-
-        Parameters
-            :param image_url : (str) : The image you want to use for the meme
-
-        """
-        image_bytes = await HTTPClient().get_image(f"bongocat?image_url={image_url}")
-        return Meme(image_bytes)
-
-    @classmethod
-    async def brazzers(self, image_url: str) -> Meme:
-        """
-        Generates the brazzers meme
-
-        Parameters
-            :param image_url : (str) : The image you want to use for the meme
-
-        """
-        image_bytes = await HTTPClient().get_image(f"brazzers?image_url={image_url}")
-        return Meme(image_bytes)
-
-    @classmethod
-    async def gun(self, image_url: str) -> Meme:
-        """
-        Generates the gun meme
-
-        Parameters
-            :param image_url : (str) : The image you want to use for the meme
-
-        """
-        image_bytes = await HTTPClient().get_image(f"gun?image_url={image_url}")
-        return Meme(image_bytes)
-
-    @classmethod
-    async def surprised(self, text: str) -> Meme:
+    async def surprised(cls, text: str) -> Meme:
         """
         Generates the surprised meme
 
@@ -410,19 +389,7 @@ class GenerateMeme:
         return Meme(image_bytes)
 
     @classmethod
-    async def trash(self, image_url: str) -> Meme:
-        """
-        Generates the trash meme
-
-        Parameters
-            :param image_url : (str) : The image you want to use for the meme
-
-        """
-        image_bytes = await HTTPClient().get_image(f"trash?image_url={image_url}")
-        return Meme(image_bytes)
-
-    @classmethod
-    async def violence(self, text: str) -> Meme:
+    async def violence(cls, text: str) -> Meme:
         """
         Generates the violence meme
 
@@ -436,7 +403,79 @@ class GenerateMeme:
         return Meme(image_bytes)
 
     @classmethod
-    async def wanted(self, image_url: str) -> Meme:
+    async def bongocat(cls, image_url: str) -> Meme:
+        """
+        Generates the bongocat meme
+
+        Parameters
+            :param image_url : (str) : The image you want to use for the meme
+
+        """
+        image_bytes = await HTTPClient().get_image(f"bongocat?image_url={image_url}")
+        return Meme(image_bytes)
+
+    @classmethod
+    async def brazzers(cls, image_url: str) -> Meme:
+        """
+        Generates the brazzers meme
+
+        Parameters
+            :param image_url : (str) : The image you want to use for the meme
+
+        """
+        image_bytes = await HTTPClient().get_image(f"brazzers?image_url={image_url}")
+        return Meme(image_bytes)
+
+    @classmethod
+    async def gun(cls, image_url: str) -> Meme:
+        """
+        Generates the gun meme
+
+        Parameters
+            :param image_url : (str) : The image you want to use for the meme
+
+        """
+        image_bytes = await HTTPClient().get_image(f"gun?image_url={image_url}")
+        return Meme(image_bytes)
+
+    @classmethod
+    async def trash(cls, image_url: str) -> Meme:
+        """
+        Generates the trash meme
+
+        Parameters
+            :param image_url : (str) : The image you want to use for the meme
+
+        """
+        image_bytes = await HTTPClient().get_image(f"trash?image_url={image_url}")
+        return Meme(image_bytes)
+
+    @classmethod
+    async def aborted(cls, image_url: str) -> Meme:
+        """
+        Generates the aborted meme
+
+        Parameters
+            :param image_url : (str) : The image you want to use for the meme
+
+        """
+        image_bytes = await HTTPClient().get_image(f"aborted?image_url={image_url}")
+        return Meme(image_bytes)
+
+    @classmethod
+    async def affect(cls, image_url: str) -> Meme:
+        """
+        Generates the aborted meme
+
+        Parameters
+            :param image_url : (str) : The image you want to use for the meme
+
+        """
+        image_bytes = await HTTPClient().get_image(f"affect?image_url={image_url}")
+        return Meme(image_bytes)
+
+    @classmethod
+    async def wanted(cls, image_url: str) -> Meme:
         """
         Generates the wanted meme
 

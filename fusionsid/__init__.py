@@ -1,5 +1,3 @@
-from typing import Dict
-
 from fusionsid.decorators import Decorators
 from fusionsid.errors import Error, ImageNotGenerated
 from fusionsid.fun import Fun
@@ -31,7 +29,7 @@ __github__ = "https://github.com/FusionSid/FusionSidAPI.py"
 __api_github__ = "https://github.com/FusionSid/FusionSidsAPI"
 
 
-async def stats(json=False) -> Dict:
+async def stats(json=False) -> dict:
     """
     Stats about the api
 
@@ -50,7 +48,7 @@ async def stats(json=False) -> Dict:
     return data
 
 
-async def endpoints(json=False) -> Dict:
+async def endpoints(json=False) -> dict:
     """
     List of api endpoints
 

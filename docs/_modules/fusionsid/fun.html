@@ -178,7 +178,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Fun.eightball"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.fun.Fun.eightball">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">eightball</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">eightball</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -188,7 +188,7 @@
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;answer&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Fun.roast"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.fun.Fun.roast">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">roast</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">roast</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -198,7 +198,7 @@
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;roast&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Fun.compliment"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.fun.Fun.compliment">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">compliment</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">compliment</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -208,7 +208,7 @@
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;compliment&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Fun.truth"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.fun.Fun.truth">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">truth</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">truth</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -218,7 +218,7 @@
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;truth&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Fun.dare"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.fun.Fun.dare">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">dare</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">dare</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -228,7 +228,7 @@
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;dare&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Fun.truth_or_dare"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.fun.Fun.truth_or_dare">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">truth_or_dare</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">truth_or_dare</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -238,7 +238,7 @@
         <span class="k">return</span> <span class="n">data</span></div>
 
 <div class="viewcode-block" id="Fun.fact"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.fun.Fun.fact">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -248,7 +248,7 @@
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;fact&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Fun.wordle"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.fun.Fun.wordle">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">wordle</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">wordle</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -258,7 +258,7 @@
         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;wordle&quot;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Fun.reddit_search"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.fun.Fun.reddit_search">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">reddit_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">reddit_search</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
 <span class="sd">            :param keyword (str) : The search query to search on reddit</span>

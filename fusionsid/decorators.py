@@ -10,9 +10,16 @@ class Decorators:
         Putting this above a function will print a compliment before the function is run
 
         Example:
-            >>> @Decorators.compliment()
-                async def main():
-                    pass
+        --------
+        ```
+        
+        compliment = Decorators.compliment
+
+        @compliment()
+        async def main():
+            pass
+        ```
+
         """
 
         def wrapper(func):
@@ -32,9 +39,16 @@ class Decorators:
         Putting this above a function will print a fact before the function is run
 
         Example:
-            >>> @Decorators.fact()
-                async def main():
-                    pass
+        --------
+        ```
+
+        fact = Decorators.fact
+
+        @fact()
+        async def main():
+            pass
+        ```
+
         """
 
         def wrapper(func):
@@ -54,9 +68,16 @@ class Decorators:
         Putting this above a function will print a roast before the function is run
 
         Example:
-            >>> @Decorators.roast()
-                async def main():
-                    pass
+        --------
+        ```
+
+        roast = Decorators.roast
+
+        @roast()
+        async def main():
+            pass
+        ```
+
         """
 
         def wrapper(func):
@@ -76,9 +97,16 @@ class Decorators:
         Putting this above a function will print a truth before the function is run
 
         Example:
-            >>> @Decorators.truth()
-                async def main():
-                    pass
+        --------
+        ```
+
+        truth = Decorators.truth
+
+        @truth()
+        async def main():
+            pass
+        ```
+
         """
 
         def wrapper(func):
@@ -98,9 +126,16 @@ class Decorators:
         Putting this above a function will print a dare before the function is run
 
         Example:
-            >>> @Decorators.dare()
-                async def main():
-                    pass
+        --------
+        ```
+
+        dare = Decorators.dare
+
+        @dare()
+        async def main():
+            pass
+        ```
+
         """
 
         def wrapper(func):

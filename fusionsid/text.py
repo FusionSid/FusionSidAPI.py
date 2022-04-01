@@ -30,7 +30,7 @@ class Text:
     """
 
     @classmethod
-    async def text_to_binary(self, text: str) -> Dict:
+    async def text_to_binary(cls, text: str) -> Dict:
         """
         Parameters
         ----------
@@ -46,7 +46,7 @@ class Text:
         return data["binary"]
 
     @classmethod
-    async def text_to_hex(self, text: str) -> Dict:
+    async def text_to_hex(cls, text: str) -> Dict:
         """
         Parameters
         -----
@@ -61,7 +61,7 @@ class Text:
         return data["hex"]
 
     @classmethod
-    async def binary_to_text(self, binary: str) -> Dict:
+    async def binary_to_text(cls, binary: str) -> Dict:
         """
         Parameters
             :param binary (str) : The binary you want to convert to text
@@ -75,7 +75,7 @@ class Text:
         return data["text"]
 
     @classmethod
-    async def hex_to_text(self, hex: str) -> Dict:
+    async def hex_to_text(cls, hex: str) -> Dict:
         """
         Parameters
             :param hex (str) : The hex you want to convert to text
@@ -89,7 +89,7 @@ class Text:
         return data["text"]
 
     @classmethod
-    async def hash(self, text: str) -> Dict:
+    async def hash(cls, text: str) -> Dict:
         """
         Parameters
         -----
@@ -104,7 +104,7 @@ class Text:
         return data["encrypted"]
 
     @classmethod
-    async def password(self, text: str, length: int = 8) -> Dict:
+    async def password(cls, text: str, length: int = 8) -> Dict:
         """
         Parameters
         -----
@@ -120,7 +120,7 @@ class Text:
         return data["password"]
 
     @classmethod
-    async def expand(self, text: str, space: int = 5) -> Dict:
+    async def expand(cls, text: str, space: int = 5) -> Dict:
         """
         Parameters
         -----
@@ -136,7 +136,7 @@ class Text:
         return data["text"]
 
     @classmethod
-    async def reverse(self, text: str) -> Dict:
+    async def reverse(cls, text: str) -> Dict:
         """
         Parameters
         -----
@@ -151,7 +151,7 @@ class Text:
         return data["text"]
 
     @classmethod
-    async def drunkify(self, text: str) -> Dict:
+    async def drunkify(cls, text: str) -> Dict:
         """
         Parameters
         -----

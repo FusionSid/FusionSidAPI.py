@@ -155,12 +155,12 @@
            <div itemprop="articleBody">
             
   <h1>Source code for fusionsid.image</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+<span></span><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
+<span class="kn">import</span> <span class="nn">PIL</span>
 <span class="kn">import</span> <span class="nn">aiohttp</span>
 <span class="kn">import</span> <span class="nn">aiofiles</span>
-<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">img</span>
 
 <span class="kn">from</span> <span class="nn">.http</span> <span class="kn">import</span> <span class="n">HTTPClient</span>
@@ -205,7 +205,35 @@
         <span class="n">image</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_bytes</span><span class="p">))</span>
         <span class="n">image</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="kc">None</span></div></div>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="BaseImage.save_bytesio"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.BaseImage.save_bytesio">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">save_bytesio</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BytesIO</span><span class="p">:</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Saves the image to BytesIO</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">            BytesIO</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_bytes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ImageNotGenerated</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_bytes</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">image</span></div>
+
+<div class="viewcode-block" id="BaseImage.pil"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.BaseImage.pil">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">pil</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">:</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Converts the image to a PIL.Image.Image object and returns it</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">            PIL.Image.Image</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_bytes</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">image</span></div></div>
 
 
 <div class="viewcode-block" id="RandomMeme"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.RandomMeme">[docs]</a><span class="k">class</span> <span class="nc">RandomMeme</span><span class="p">(</span><span class="n">BaseImage</span><span class="p">):</span>
@@ -324,7 +352,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Image.random_meme"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.Image.random_meme">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">random_meme</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RandomMeme</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">random_meme</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RandomMeme</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets a random meme from the subreddit: r/memes</span>
 
@@ -341,7 +369,7 @@
         <span class="k">return</span> <span class="n">RandomMeme</span><span class="p">(</span><span class="n">json</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">image_bytes</span><span class="o">=</span><span class="n">image_bytes</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Image.qrcode"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.Image.qrcode">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">qrcode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">QRCode</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">qrcode</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">QRCode</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generates a qr code</span>
 
@@ -353,7 +381,7 @@
         <span class="k">return</span> <span class="n">QRCode</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">qrcode</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Image.get_colors"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.Image.get_colors">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_colors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">show_hex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_colors</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">show_hex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the most dominant color and color palette of an image</span>
 
@@ -382,7 +410,7 @@
 
 <div class="viewcode-block" id="Image.font_convert"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.Image.font_convert">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">async</span> <span class="k">def</span> <span class="nf">font_convert</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">font_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">font_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">FontImage</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Converts text to a font you choose</span>
@@ -411,7 +439,7 @@
         <span class="k">return</span> <span class="n">FontImage</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Image.font_list"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.Image.font_list">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">font_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">print_all</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">font_list</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">print_all</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Prints a list of all the fonts that the api supports converting to</span>
 
@@ -452,20 +480,31 @@
 <span class="sd">    Methods</span>
 <span class="sd">    -------</span>
 <span class="sd">        abandon(text : str) : Returns a `Meme`</span>
-<span class="sd">        aborted(image_url : str) : Returns a `Meme`</span>
-<span class="sd">        affect(image_url : str) : Returns a `Meme`</span>
+
 <span class="sd">        armor(text : str) : Returns a `Meme`</span>
-<span class="sd">        bongocat(image_url : str) : Returns a `Meme`</span>
-<span class="sd">        brazzers(image_url : str) : Returns a `Meme`</span>
-<span class="sd">        gun(image_url : str) : Returns a `Meme`</span>
+
 <span class="sd">        surprised(text : str) : Returns a `Meme`</span>
-<span class="sd">        trash(image_url : str) : Returns a `Meme`</span>
+
 <span class="sd">        violence(text : str) : Returns a `Meme`</span>
+
+<span class="sd">        bongocat(image_url : str) : Returns a `Meme`</span>
+
+<span class="sd">        brazzers(image_url : str) : Returns a `Meme`</span>
+
+<span class="sd">        gun(image_url : str) : Returns a `Meme`</span>
+
+<span class="sd">        trash(image_url : str) : Returns a `Meme`</span>
+
+<span class="sd">        aborted(image_url : str) : Returns a `Meme`</span>
+
+<span class="sd">        affect(image_url : str) : Returns a `Meme`</span>
+
 <span class="sd">        wanted(image_url : str) : Returns a `Meme`</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="GenerateMeme.abandon"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.abandon">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">abandon</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">abandon</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generates the abandon meme</span>
 
@@ -478,32 +517,8 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GenerateMeme.aborted"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.aborted">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">aborted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Generates the aborted meme</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;aborted?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
-
-<div class="viewcode-block" id="GenerateMeme.affect"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.affect">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">affect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Generates the aborted meme</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;affect?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
-
 <div class="viewcode-block" id="GenerateMeme.armor"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.armor">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">armor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">armor</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generates the armor meme</span>
 
@@ -516,44 +531,8 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GenerateMeme.bongocat"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.bongocat">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">bongocat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Generates the bongocat meme</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;bongocat?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
-
-<div class="viewcode-block" id="GenerateMeme.brazzers"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.brazzers">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">brazzers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Generates the brazzers meme</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;brazzers?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
-
-<div class="viewcode-block" id="GenerateMeme.gun"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.gun">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">gun</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Generates the gun meme</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;gun?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
-
 <div class="viewcode-block" id="GenerateMeme.surprised"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.surprised">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">surprised</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">surprised</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generates the surprised meme</span>
 
@@ -566,20 +545,8 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GenerateMeme.trash"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.trash">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">trash</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Generates the trash meme</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;trash?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
-
 <div class="viewcode-block" id="GenerateMeme.violence"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.violence">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">violence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">violence</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generates the violence meme</span>
 
@@ -592,8 +559,80 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
 
+<div class="viewcode-block" id="GenerateMeme.bongocat"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.bongocat">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">bongocat</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">image_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generates the bongocat meme</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;bongocat?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenerateMeme.brazzers"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.brazzers">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">brazzers</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">image_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generates the brazzers meme</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;brazzers?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenerateMeme.gun"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.gun">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">gun</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">image_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generates the gun meme</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;gun?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenerateMeme.trash"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.trash">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">trash</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">image_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generates the trash meme</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;trash?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenerateMeme.aborted"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.aborted">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">aborted</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">image_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generates the aborted meme</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;aborted?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenerateMeme.affect"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.affect">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">affect</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">image_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generates the aborted meme</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;affect?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
+
 <div class="viewcode-block" id="GenerateMeme.wanted"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.wanted">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">wanted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">wanted</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">image_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generates the wanted meme</span>
 
