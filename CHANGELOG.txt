@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+1.0.1 (6/04/2022)
+-------------------
+- Added image filters
+- New `Filter` class for image filters
+    Current filters:
+    - blur
+    - grey_scale
+    - color
 
 1.0.0 (1/04/2022)
 -------------------
