@@ -4,6 +4,14 @@ fusionsid package
 Submodules
 ----------
 
+fusionsid.image module
+----------------------
+
+.. automodule:: fusionsid.image
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 fusionsid.decorators module
 ---------------------------
 
@@ -20,14 +28,6 @@ fusionsid.fun module
    :undoc-members:
    :show-inheritance:
 
-fusionsid.image module
-----------------------
-
-.. automodule:: fusionsid.image
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 fusionsid.text module
 ---------------------
 
@@ -36,10 +36,10 @@ fusionsid.text module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
+fusionsid.filter module
+---------------------
 
-.. automodule:: fusionsid
+.. automodule:: fusionsid.filter
    :members:
    :undoc-members:
    :show-inheritance:
@@ -56,6 +56,14 @@ fusionsid.errors module
 -----------------------
 
 .. automodule:: fusionsid.errors
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: fusionsid
    :members:
    :undoc-members:
    :show-inheritance:

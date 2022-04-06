@@ -391,8 +391,8 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            :param: filepath (str) : The path to the file</span>
-<span class="sd">            :param: show_hex (bool) : By default the api will return hex values but if you want rgb set this to False</span>
+<span class="sd">            filepath (str) : The path to the file</span>
+<span class="sd">            show_hex (bool) : By default the api will return hex values but if you want rgb set this to False</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -423,10 +423,10 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            :param text (str): The text you are converting</span>
-<span class="sd">            :param font_name (str): The font you are converting to,</span>
+<span class="sd">            text (str): The text you are converting</span>
+<span class="sd">            font_name (str): The font you are converting to,</span>
 <span class="sd">                Use the Image.font_list() function to get a list of them</span>
-<span class="sd">            :param color (str, Optional): The color of the text, Defaults to black</span>
+<span class="sd">            color (str, Optional): The color of the text, Defaults to black</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -453,7 +453,7 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            :param print_all (bool, Optional): setting this to true will print all the fonts in console</span>
+<span class="sd">            print_all (bool, Optional): setting this to true will print all the fonts in console</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -520,11 +520,11 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            :param text : (str) : The text you want to use for the meme</span>
+<span class="sd">            text (str) : The text you want to use for the meme</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">            :class:`Meme`</span>
+<span class="sd">            Meme</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span>
@@ -539,11 +539,11 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            :param text : (str) : The text you want to use for the meme</span>
+<span class="sd">            text (str) : The text you want to use for the meme</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">            :class:`Meme`</span>
+<span class="sd">            Meme</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span>
@@ -558,11 +558,11 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            :param text : (str) : The text you want to use for the meme</span>
+<span class="sd">            text (str) : The text you want to use for the meme</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">            :class:`Meme`</span>
+<span class="sd">            Meme</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span>
@@ -577,11 +577,11 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            :param text : (str) : The text you want to use for the meme</span>
+<span class="sd">            text (str) : The text you want to use for the meme</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">            :class:`Meme`</span>
+<span class="sd">            Meme</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span>
@@ -596,11 +596,11 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
+<span class="sd">            image_url (str) : The image you want to use for the meme</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">            :class:`Meme`</span>
+<span class="sd">            Meme</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;bongocat?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -613,11 +613,11 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
+<span class="sd">            image_url (str) : The image you want to use for the meme</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">            :class:`Meme`</span>
+<span class="sd">            Meme</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;brazzers?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -630,11 +630,11 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
+<span class="sd">            image_url (str) : The image you want to use for the meme</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">            :class:`Meme`</span>
+<span class="sd">            Meme</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;gun?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -647,11 +647,11 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
+<span class="sd">            image_url (str) : The image you want to use for the meme</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">            :class:`Meme`</span>
+<span class="sd">            Meme</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;trash?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -664,11 +664,11 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
+<span class="sd">            image_url (str) : The image you want to use for the meme</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">            :class:`Meme`</span>
+<span class="sd">            Meme</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;aborted?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -681,11 +681,11 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
+<span class="sd">            image_url (str) : The image you want to use for the meme</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">            :class:`Meme`</span>
+<span class="sd">            Meme</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;affect?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -698,11 +698,11 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            :param image_url : (str) : The image you want to use for the meme</span>
+<span class="sd">            image_url (str) : The image you want to use for the meme</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">            :class:`Meme`</span>
+<span class="sd">            Meme</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;wanted?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>

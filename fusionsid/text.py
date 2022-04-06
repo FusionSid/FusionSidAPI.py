@@ -34,7 +34,7 @@ class Text:
         """
         Parameters
         ----------
-            :param text (str) : The text you want to convert
+            text (str) : The text you want to convert
 
         Example
         -------
@@ -49,8 +49,8 @@ class Text:
     async def text_to_hex(cls, text: str) -> Dict:
         """
         Parameters
-        -----
-            :param text (str) : The text you want to convert
+        ----------
+            text (str) : The text you want to convert
 
         Example
         -------
@@ -64,7 +64,8 @@ class Text:
     async def binary_to_text(cls, binary: str) -> Dict:
         """
         Parameters
-            :param binary (str) : The binary you want to convert to text
+        ----------
+            binary (str) : The binary you want to convert to text
 
         Example
         -------
@@ -78,7 +79,8 @@ class Text:
     async def hex_to_text(cls, hex: str) -> Dict:
         """
         Parameters
-            :param hex (str) : The hex you want to convert to text
+        ----------
+            hex (str) : The hex you want to convert to text
 
         Example
         -------
@@ -92,8 +94,8 @@ class Text:
     async def hash(cls, text: str) -> Dict:
         """
         Parameters
-        -----
-            :param text (str) : The text you want to hash
+        ----------
+            text (str) : The text you want to hash
 
         Example
         -------
@@ -107,9 +109,9 @@ class Text:
     async def password(cls, text: str, length: int = 8) -> Dict:
         """
         Parameters
-        -----
-            :param text (str) : The text you want to convert
-            :param length (int Optional) : The length of the password
+        ----------
+            text (str) : The text you want to convert
+            length (int Optional) : The length of the password
 
         Example
         -------
@@ -123,9 +125,9 @@ class Text:
     async def expand(cls, text: str, space: int = 5) -> Dict:
         """
         Parameters
-        -----
-            :param text (str) : The text you want to convert
-            :param space (str Optional) : The space between each letter
+        ----------
+            text (str) : The text you want to convert
+            space (str Optional) : The space between each letter
 
         Example
         -------
@@ -139,8 +141,8 @@ class Text:
     async def reverse(cls, text: str) -> Dict:
         """
         Parameters
-        -----
-            :param text (str) : The text you want to convert
+        ----------
+            text (str) : The text you want to convert
 
         Example
         -------
@@ -154,8 +156,8 @@ class Text:
     async def drunkify(cls, text: str) -> Dict:
         """
         Parameters
-        -----
-            :param text (str) : The text you want to convert
+        ----------
+            text (str) : The text you want to convert
 
         Example
         -------

@@ -191,7 +191,7 @@
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            :param text (str) : The text you want to convert</span>
+<span class="sd">            text (str) : The text you want to convert</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -206,8 +206,8 @@
     <span class="k">async</span> <span class="k">def</span> <span class="nf">text_to_hex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
-<span class="sd">        -----</span>
-<span class="sd">            :param text (str) : The text you want to convert</span>
+<span class="sd">        ----------</span>
+<span class="sd">            text (str) : The text you want to convert</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -221,7 +221,8 @@
     <span class="k">async</span> <span class="k">def</span> <span class="nf">binary_to_text</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">binary</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
-<span class="sd">            :param binary (str) : The binary you want to convert to text</span>
+<span class="sd">        ----------</span>
+<span class="sd">            binary (str) : The binary you want to convert to text</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -235,7 +236,8 @@
     <span class="k">async</span> <span class="k">def</span> <span class="nf">hex_to_text</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">hex</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
-<span class="sd">            :param hex (str) : The hex you want to convert to text</span>
+<span class="sd">        ----------</span>
+<span class="sd">            hex (str) : The hex you want to convert to text</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -249,8 +251,8 @@
     <span class="k">async</span> <span class="k">def</span> <span class="nf">hash</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
-<span class="sd">        -----</span>
-<span class="sd">            :param text (str) : The text you want to hash</span>
+<span class="sd">        ----------</span>
+<span class="sd">            text (str) : The text you want to hash</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -264,9 +266,9 @@
     <span class="k">async</span> <span class="k">def</span> <span class="nf">password</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
-<span class="sd">        -----</span>
-<span class="sd">            :param text (str) : The text you want to convert</span>
-<span class="sd">            :param length (int Optional) : The length of the password</span>
+<span class="sd">        ----------</span>
+<span class="sd">            text (str) : The text you want to convert</span>
+<span class="sd">            length (int Optional) : The length of the password</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -280,9 +282,9 @@
     <span class="k">async</span> <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">space</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
-<span class="sd">        -----</span>
-<span class="sd">            :param text (str) : The text you want to convert</span>
-<span class="sd">            :param space (str Optional) : The space between each letter</span>
+<span class="sd">        ----------</span>
+<span class="sd">            text (str) : The text you want to convert</span>
+<span class="sd">            space (str Optional) : The space between each letter</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -296,8 +298,8 @@
     <span class="k">async</span> <span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
-<span class="sd">        -----</span>
-<span class="sd">            :param text (str) : The text you want to convert</span>
+<span class="sd">        ----------</span>
+<span class="sd">            text (str) : The text you want to convert</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -311,8 +313,8 @@
     <span class="k">async</span> <span class="k">def</span> <span class="nf">drunkify</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
-<span class="sd">        -----</span>
-<span class="sd">            :param text (str) : The text you want to convert</span>
+<span class="sd">        ----------</span>
+<span class="sd">            text (str) : The text you want to convert</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
