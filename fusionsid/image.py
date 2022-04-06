@@ -56,7 +56,8 @@ class BaseImage:
         Saves the image to BytesIO
 
         Returns
-            BytesIO
+        -------
+            :class:`BytesIO`
         """
 
         if self.image_bytes is None:
@@ -72,7 +73,8 @@ class BaseImage:
         Converts the image to a PIL.Image.Image object and returns it
 
         Returns
-            PIL.Image.Image
+        -------
+            :class:`PIL.Image.Image`
         """
 
         image = img.open(BytesIO(self.image_bytes))
@@ -169,7 +171,7 @@ class QRCode(BaseImage):
 class FontImage(BaseImage):
     """
     FontConvertedImage
-    ----
+    ------------------
 
     Attributes
     ----------
@@ -199,8 +201,9 @@ class Image:
         """
         Gets a random meme from the subreddit: r/memes
 
-        Returns:
-            RandomMeme : The meme
+        Returns
+        -------
+            :class:`RandomMeme` : The meme
         """
         while True:
             image = await HTTPClient().get_json(url="meme?reddit_json_info=True")
@@ -216,8 +219,9 @@ class Image:
         """
         Generates a qr code
 
-        Returns:
-            QRCode : The qrcode
+        Returns
+        -------
+            :class:`QRCode` : The qrcode
         """
         qrcode = await HTTPClient().get_image(f"qrcode?link={url}")
 
@@ -229,10 +233,12 @@ class Image:
         Gets the most dominant color and color palette of an image
 
         Parameters
+        ----------
             :param: filepath (str) : The path to the file
             :param: show_hex (bool) : By default the api will return hex values but if you want rgb set this to False
 
         Example
+        -------
             >>> await Image.get_colors("snail.png", False)
         """
         try:
@@ -259,13 +265,15 @@ class Image:
         Converts text to a font you choose
 
         Parameters
+        ----------
             :param text (str): The text you are converting
             :param font_name (str): The font you are converting to,
                 Use the Image.font_list() function to get a list of them
             :param color (str, Optional): The color of the text, Defaults to black
 
         Returns
-            FontImage: The image of the font
+        -------
+            :class:`FontImage`: The image of the font
         """
         list_of_fonts = await HTTPClient().get_json("fontconvert/list")
         list_of_fonts = list_of_fonts["Font_List"]
@@ -287,10 +295,12 @@ class Image:
         Prints a list of all the fonts that the api supports converting to
 
         Parameters
+        ----------
             :param print_all (bool, Optional): setting this to true will print all the fonts in console
 
         Returns
-            list : The list of fonts
+        -------
+            :class:`list` : The list of fonts
         """
         list_of_fonts = await HTTPClient().get_json("fontconvert/list")
         list_of_fonts = list_of_fonts["Font_List"]
@@ -352,7 +362,12 @@ class GenerateMeme:
         Generates the abandon meme
 
         Parameters
+        ----------
             :param text : (str) : The text you want to use for the meme
+
+        Returns
+        -------
+            :class:`Meme`
 
         """
         image_bytes = await HTTPClient().get_image(
@@ -366,7 +381,12 @@ class GenerateMeme:
         Generates the armor meme
 
         Parameters
+        ----------
             :param text : (str) : The text you want to use for the meme
+
+        Returns
+        -------
+            :class:`Meme`
 
         """
         image_bytes = await HTTPClient().get_image(
@@ -380,7 +400,12 @@ class GenerateMeme:
         Generates the surprised meme
 
         Parameters
+        ----------
             :param text : (str) : The text you want to use for the meme
+
+        Returns
+        -------
+            :class:`Meme`
 
         """
         image_bytes = await HTTPClient().get_image(
@@ -394,7 +419,12 @@ class GenerateMeme:
         Generates the violence meme
 
         Parameters
+        ----------
             :param text : (str) : The text you want to use for the meme
+
+        Returns
+        -------
+            :class:`Meme`
 
         """
         image_bytes = await HTTPClient().get_image(
@@ -408,7 +438,12 @@ class GenerateMeme:
         Generates the bongocat meme
 
         Parameters
+        ----------
             :param image_url : (str) : The image you want to use for the meme
+
+        Returns
+        -------
+            :class:`Meme`
 
         """
         image_bytes = await HTTPClient().get_image(f"bongocat?image_url={image_url}")
@@ -420,7 +455,12 @@ class GenerateMeme:
         Generates the brazzers meme
 
         Parameters
+        ----------
             :param image_url : (str) : The image you want to use for the meme
+
+        Returns
+        -------
+            :class:`Meme`
 
         """
         image_bytes = await HTTPClient().get_image(f"brazzers?image_url={image_url}")
@@ -432,7 +472,12 @@ class GenerateMeme:
         Generates the gun meme
 
         Parameters
+        ----------
             :param image_url : (str) : The image you want to use for the meme
+
+        Returns
+        -------
+            :class:`Meme`
 
         """
         image_bytes = await HTTPClient().get_image(f"gun?image_url={image_url}")
@@ -444,7 +489,12 @@ class GenerateMeme:
         Generates the trash meme
 
         Parameters
+        ----------
             :param image_url : (str) : The image you want to use for the meme
+
+        Returns
+        -------
+            :class:`Meme`
 
         """
         image_bytes = await HTTPClient().get_image(f"trash?image_url={image_url}")
@@ -456,7 +506,12 @@ class GenerateMeme:
         Generates the aborted meme
 
         Parameters
+        ----------
             :param image_url : (str) : The image you want to use for the meme
+
+        Returns
+        -------
+            :class:`Meme`
 
         """
         image_bytes = await HTTPClient().get_image(f"aborted?image_url={image_url}")
@@ -468,7 +523,12 @@ class GenerateMeme:
         Generates the aborted meme
 
         Parameters
+        ----------
             :param image_url : (str) : The image you want to use for the meme
+
+        Returns
+        -------
+            :class:`Meme`
 
         """
         image_bytes = await HTTPClient().get_image(f"affect?image_url={image_url}")
@@ -480,7 +540,12 @@ class GenerateMeme:
         Generates the wanted meme
 
         Parameters
+        ----------
             :param image_url : (str) : The image you want to use for the meme
+
+        Returns
+        -------
+            :class:`Meme`
 
         """
         image_bytes = await HTTPClient().get_image(f"wanted?image_url={image_url}")

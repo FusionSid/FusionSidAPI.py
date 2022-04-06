@@ -14,7 +14,7 @@ class HTTPClient:
             :param url (str) : The url to make a request to
 
         Returns:
-            bytes : The image
+            :class:`bytes` : The image
         """
         async with aiohttp.ClientSession() as session:
             async with session.get(f"{self.BASE_URL}/{url}") as resp:
@@ -29,7 +29,7 @@ class HTTPClient:
            :param url (str) : The url to make a request to
 
         Returns:
-            bytes : The image
+            :class:`bytes` : The image
         """
         async with aiohttp.ClientSession() as session:
             async with session.get(url) as resp:
@@ -45,7 +45,7 @@ class HTTPClient:
             :param data (Dict, optional) : This is a dictionary of any extra params to send the request
 
         Returns:
-            Dict : The json response
+            :class:`Dict` : The json response
         """
         async with aiohttp.ClientSession() as session:
             async with session.get(f"{self.BASE_URL}/{url}") as resp:
@@ -64,7 +64,7 @@ class HTTPClient:
             :param data (Dict, optional) : This is a dictionary of any extra params to send the request
 
         Returns:
-            Dict : The json response
+            :class:`Dict` : The json response
         """
         async with aiohttp.ClientSession() as session:
             async with session.get(url) as resp:

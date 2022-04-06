@@ -12,7 +12,7 @@ class Decorators:
         Example:
         --------
         ```
-        
+
         compliment = Decorators.compliment
 
         @compliment()

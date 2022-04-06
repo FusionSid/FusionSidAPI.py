@@ -1,5 +1,6 @@
 from fusionsid.decorators import Decorators
 from fusionsid.errors import Error, ImageNotGenerated
+from .filter import Filter, FilteredImage
 from fusionsid.fun import Fun
 from fusionsid.http import HTTPClient
 from fusionsid.image import (
