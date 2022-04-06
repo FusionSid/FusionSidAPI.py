@@ -340,6 +340,8 @@ class GenerateMeme:
 
         violence(text : str) : Returns a `Meme`
 
+        balloon(text1 : str, text2 : str) : Returns a `Meme`
+
         bongocat(image_url : str) : Returns a `Meme`
 
         brazzers(image_url : str) : Returns a `Meme`
@@ -371,7 +373,7 @@ class GenerateMeme:
 
         """
         image_bytes = await HTTPClient().get_image(
-            f"abandon?text={text.replace(' ', '+')}"
+            f"abandon?text={text}"
         )
         return Meme(image_bytes)
 
@@ -390,7 +392,7 @@ class GenerateMeme:
 
         """
         image_bytes = await HTTPClient().get_image(
-            f"armor?text={text.replace(' ', '+')}"
+            f"armor?text={text}"
         )
         return Meme(image_bytes)
 
@@ -409,7 +411,7 @@ class GenerateMeme:
 
         """
         image_bytes = await HTTPClient().get_image(
-            f"surprised?text={text.replace(' ', '+')}"
+            f"surprised?text={text}"
         )
         return Meme(image_bytes)
 
@@ -428,9 +430,31 @@ class GenerateMeme:
 
         """
         image_bytes = await HTTPClient().get_image(
-            f"violence?text={text.replace(' ', '+')}"
+            f"violence?text={text}"
         )
         return Meme(image_bytes)
+        
+        
+    @classmethod
+    async def balloon(cls, balloon_text: str, arrow_text: str) -> Meme:
+        """
+        Generates the balloon meme
+
+        Parameters
+        ----------
+            text1 (str) : The text you want to use for the ballon part of the meme
+            text2 (str) : The text you want to use for the arrow part of the meme
+
+        Returns
+        -------
+            Meme
+
+        """
+        image_bytes = await HTTPClient().get_image(
+            f"balloon?text1={balloon_text}&text2={arrow_text}"
+        )
+        return Meme(image_bytes)
+
 
     @classmethod
     async def bongocat(cls, image_url: str) -> Meme:
