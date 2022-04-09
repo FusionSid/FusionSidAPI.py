@@ -484,34 +484,8 @@
 
 <div class="viewcode-block" id="GenerateMeme"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme">[docs]</a><span class="k">class</span> <span class="nc">GenerateMeme</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Generate Meme</span>
-<span class="sd">    -------------</span>
-
-<span class="sd">    Methods</span>
-<span class="sd">    -------</span>
-<span class="sd">        abandon(text : str) : Returns a `Meme`</span>
-
-<span class="sd">        armor(text : str) : Returns a `Meme`</span>
-
-<span class="sd">        surprised(text : str) : Returns a `Meme`</span>
-
-<span class="sd">        violence(text : str) : Returns a `Meme`</span>
-
-<span class="sd">        balloon(text1 : str, text2 : str) : Returns a `Meme`</span>
-
-<span class="sd">        bongocat(image_url : str) : Returns a `Meme`</span>
-
-<span class="sd">        brazzers(image_url : str) : Returns a `Meme`</span>
-
-<span class="sd">        gun(image_url : str) : Returns a `Meme`</span>
-
-<span class="sd">        trash(image_url : str) : Returns a `Meme`</span>
-
-<span class="sd">        aborted(image_url : str) : Returns a `Meme`</span>
-
-<span class="sd">        affect(image_url : str) : Returns a `Meme`</span>
-
-<span class="sd">        wanted(image_url : str) : Returns a `Meme`</span>
+<span class="sd">    Generate Memes</span>
+<span class="sd">    --------------</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -590,6 +564,26 @@
             <span class="sa">f</span><span class="s2">&quot;violence?text=</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GenerateMeme.change_my_mind"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.change_my_mind">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">change_my_mind</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generates the change my mind meme</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">            text (str) : The text you want to use for the meme</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            Meme</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;changemymind?text=</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
         
         
 <div class="viewcode-block" id="GenerateMeme.balloon"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.balloon">[docs]</a>    <span class="nd">@classmethod</span>
@@ -599,8 +593,8 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">            text1 (str) : The text you want to use for the ballon part of the meme</span>
-<span class="sd">            text2 (str) : The text you want to use for the arrow part of the meme</span>
+<span class="sd">            balloon_text (str) : The text you want to use for the ballon part of the meme</span>
+<span class="sd">            arrow_text (str) : The text you want to use for the arrow part of the meme</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -609,6 +603,74 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;balloon?text1=</span><span class="si">{</span><span class="n">balloon_text</span><span class="si">}</span><span class="s2">&amp;text2=</span><span class="si">{</span><span class="n">arrow_text</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GenerateMeme.boo"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.boo">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">boo</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text_1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">text_2</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generates the boo meme</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">            text_1 (str) : The text you want to use for the first part of the meme</span>
+<span class="sd">            text_2 (str) : The text you want to use for the second part of the meme</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            Meme</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;boo?text_1=</span><span class="si">{</span><span class="n">text_1</span><span class="si">}</span><span class="s2">&amp;text_2=</span><span class="si">{</span><span class="n">text_2</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GenerateMeme.brain"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.brain">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">brain</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text_1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">text_2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">text_3</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">text_4</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generates the brain meme</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">            text_1 (str): The text you want to use for the first box</span>
+<span class="sd">            text_2 (str): The text you want to use for the second box</span>
+<span class="sd">            text_3 (str): The text you want to use for the third box</span>
+<span class="sd">            text_4 (str): The text you want to use for the forth box</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            Meme</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;brain?text_1=</span><span class="si">{</span><span class="n">text_1</span><span class="si">}</span><span class="s2">&amp;text_2=</span><span class="si">{</span><span class="n">text_2</span><span class="si">}</span><span class="s2">&amp;text_3=</span><span class="si">{</span><span class="n">text_3</span><span class="si">}</span><span class="s2">&amp;text_4=</span><span class="si">{</span><span class="n">text_4</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GenerateMeme.expanding_wwe"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.expanding_wwe">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">expanding_wwe</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">text_1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">text_2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">text_3</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">text_4</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">text_5</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generates the expanding wwe meme</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">            text_1 (str): The text you want to use for the first box</span>
+<span class="sd">            text_2 (str): The text you want to use for the second box</span>
+<span class="sd">            text_3 (str): The text you want to use for the third box</span>
+<span class="sd">            text_4 (str): The text you want to use for the forth box</span>
+<span class="sd">            text_5 (str): The text you want to use for the fifth box</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            Meme</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;expandingwwe?text_1=</span><span class="si">{</span><span class="n">text_1</span><span class="si">}</span><span class="s2">&amp;text_2=</span><span class="si">{</span><span class="n">text_2</span><span class="si">}</span><span class="s2">&amp;text_3=</span><span class="si">{</span><span class="n">text_3</span><span class="si">}</span><span class="s2">&amp;text_4=</span><span class="si">{</span><span class="n">text_4</span><span class="si">}</span><span class="s2">&amp;text_5=</span><span class="si">{</span><span class="n">text_5</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
 
@@ -730,6 +792,23 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;wanted?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenerateMeme.delete"><a class="viewcode-back" href="../../fusionsid.html#fusionsid.image.GenerateMeme.delete">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">image_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Meme</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generates the delete meme</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">            image_url (str) : The image you want to use for the meme</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            Meme</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">image_bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HTTPClient</span><span class="p">()</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;delete?image_url=</span><span class="si">{</span><span class="n">image_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">Meme</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span></div></div>
 </pre></div>
 

@@ -1,7 +1,16 @@
 Change Log
 ==========
 
-1.0.1 (6/04/2022)
+1.0.3 (9/04/2022)
+-----------------
+**Added 5 new meme endpoints to the GenerateMeme class**
+    - boo (`GenerateMeme.boo()`)
+    - brain (`GenerateMeme.brain()`)
+    - delete (`GenerateMeme.delete()`)
+    - expanding wwe (`GenerateMeme.expanding_wwe()`)
+    - change my mind (`GenerateMeme.change_my_mind()`)
+
+1.0.2 (6/04/2022)
 -------------------
 - Added balloon generate meme function
 

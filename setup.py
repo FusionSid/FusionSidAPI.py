@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "1.0.2"
+VERSION = "1.0.3"
 DESCRIPTION = "An asynchronous api wrapper for FusionSidsAPI."
 
 setup(

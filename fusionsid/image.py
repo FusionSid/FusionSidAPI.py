@@ -327,34 +327,8 @@ class Meme(BaseImage):
 
 class GenerateMeme:
     """
-    Generate Meme
-    -------------
-
-    Methods
-    -------
-        abandon(text : str) : Returns a `Meme`
-
-        armor(text : str) : Returns a `Meme`
-
-        surprised(text : str) : Returns a `Meme`
-
-        violence(text : str) : Returns a `Meme`
-
-        balloon(text1 : str, text2 : str) : Returns a `Meme`
-
-        bongocat(image_url : str) : Returns a `Meme`
-
-        brazzers(image_url : str) : Returns a `Meme`
-
-        gun(image_url : str) : Returns a `Meme`
-
-        trash(image_url : str) : Returns a `Meme`
-
-        aborted(image_url : str) : Returns a `Meme`
-
-        affect(image_url : str) : Returns a `Meme`
-
-        wanted(image_url : str) : Returns a `Meme`
+    Generate Memes
+    --------------
 
     """
 
@@ -433,6 +407,26 @@ class GenerateMeme:
             f"violence?text={text}"
         )
         return Meme(image_bytes)
+
+
+    @classmethod
+    async def change_my_mind(cls, text: str) -> Meme:
+        """
+        Generates the change my mind meme
+
+        Parameters
+        ----------
+            text (str) : The text you want to use for the meme
+
+        Returns
+        -------
+            Meme
+
+        """
+        image_bytes = await HTTPClient().get_image(
+            f"changemymind?text={text}"
+        )
+        return Meme(image_bytes)
         
         
     @classmethod
@@ -442,8 +436,8 @@ class GenerateMeme:
 
         Parameters
         ----------
-            text1 (str) : The text you want to use for the ballon part of the meme
-            text2 (str) : The text you want to use for the arrow part of the meme
+            balloon_text (str) : The text you want to use for the ballon part of the meme
+            arrow_text (str) : The text you want to use for the arrow part of the meme
 
         Returns
         -------
@@ -452,6 +446,74 @@ class GenerateMeme:
         """
         image_bytes = await HTTPClient().get_image(
             f"balloon?text1={balloon_text}&text2={arrow_text}"
+        )
+        return Meme(image_bytes)
+
+
+    @classmethod
+    async def boo(cls, text_1: str, text_2: str) -> Meme:
+        """
+        Generates the boo meme
+
+        Parameters
+        ----------
+            text_1 (str) : The text you want to use for the first part of the meme
+            text_2 (str) : The text you want to use for the second part of the meme
+
+        Returns
+        -------
+            Meme
+
+        """
+        image_bytes = await HTTPClient().get_image(
+            f"boo?text_1={text_1}&text_2={text_2}"
+        )
+        return Meme(image_bytes)
+
+
+    @classmethod
+    async def brain(cls, text_1: str, text_2: str, text_3 : str, text_4 : str) -> Meme:
+        """
+        Generates the brain meme
+
+        Parameters
+        ----------
+            text_1 (str): The text you want to use for the first box
+            text_2 (str): The text you want to use for the second box
+            text_3 (str): The text you want to use for the third box
+            text_4 (str): The text you want to use for the forth box
+
+        Returns
+        -------
+            Meme
+
+        """
+        image_bytes = await HTTPClient().get_image(
+            f"brain?text_1={text_1}&text_2={text_2}&text_3={text_3}&text_4={text_4}"
+        )
+        return Meme(image_bytes)
+
+
+    @classmethod
+    async def expanding_wwe(cls, text_1: str, text_2: str, text_3 : str, text_4 : str, text_5 : str) -> Meme:
+        """
+        Generates the expanding wwe meme
+
+        Parameters
+        ----------
+            text_1 (str): The text you want to use for the first box
+            text_2 (str): The text you want to use for the second box
+            text_3 (str): The text you want to use for the third box
+            text_4 (str): The text you want to use for the forth box
+            text_5 (str): The text you want to use for the fifth box
+
+        Returns
+        -------
+            Meme
+
+        """
+        image_bytes = await HTTPClient().get_image(
+            f"expandingwwe?text_1={text_1}&text_2={text_2}&text_3={text_3}&text_4={text_4}&text_5={text_5}"
         )
         return Meme(image_bytes)
 
@@ -573,4 +635,21 @@ class GenerateMeme:
 
         """
         image_bytes = await HTTPClient().get_image(f"wanted?image_url={image_url}")
+        return Meme(image_bytes)
+
+    @classmethod
+    async def delete(cls, image_url: str) -> Meme:
+        """
+        Generates the delete meme
+
+        Parameters
+        ----------
+            image_url (str) : The image you want to use for the meme
+
+        Returns
+        -------
+            Meme
+
+        """
+        image_bytes = await HTTPClient().get_image(f"delete?image_url={image_url}")
         return Meme(image_bytes)
