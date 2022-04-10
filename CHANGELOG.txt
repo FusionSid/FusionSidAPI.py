@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+1.0.4 (10/04/2022)
+-----------------
+- added __main__.py so you can do `python3 -m fusionsid` and it will print the message
+- added console script so typing `fusionsid` in console will print the info message
+- i plan on adding a cli tool to get roasts or images quick idk something like that
+
 1.0.3 (9/04/2022)
 -----------------
 **Added 5 new meme endpoints to the GenerateMeme class**
