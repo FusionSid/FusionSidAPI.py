@@ -7,6 +7,8 @@
 
 An asynchronous api wrapper to use [FusionSidAPI](https://fusionsidapi.herokuapp.com/) in python.
 
+[Docs url](https://fusionsid.github.io/FusionSidAPI.py/)
+
 ---
 
 # Install:
@@ -81,6 +83,16 @@ loop.run_until_complete(main())
 ---
 
 ### [FusionSidAPI Github](https://github.com/FusionSid/FusionSidsAPI)
+
+---
+
+### CLI Tool
+
+Typing `fusionsid` in terminal or `python3 -m fusionsid` will bring up the mini cli thing i made for this module.
+
+It can let you use the api in terminal in a fast and easy way.
+
+**Use:** `fusionsid --help` or `python3 -m fusionsid --help` for help
 
 ---
 

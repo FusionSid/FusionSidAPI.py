@@ -2,3 +2,4 @@ testing.py
 __pycache__
 .DS_Store
 docsrc
+test.py
