@@ -103,7 +103,7 @@ def main() -> int:
         return 0
 
     if args.api:
-        console.print("\n[blue]https://fusionsidapi.herokuapp.com/docs[/]\n")
+        console.print("\n[blue]https://api.fusionsid.xyz/docs[/]\n")
     if args.pypi:
         console.print("\n[blue]https://pypi.org/project/fusionsidsapi/[/]\n")
     if args.github:

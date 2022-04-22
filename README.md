@@ -5,9 +5,11 @@
 
 # FusionSidAPI Wrapper for python
 
-An asynchronous api wrapper to use [FusionSidAPI](https://fusionsidapi.herokuapp.com/) in python.
+An asynchronous api wrapper to use [FusionSidAPI](https://api.fusionsid.xyz/) in python.
 
 [Docs url](https://fusionsid.github.io/FusionSidAPI.py/)
+
+Root Url (redirects to docs): https://api.fusionsid.xyz/
 
 ---
 

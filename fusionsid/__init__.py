@@ -17,14 +17,14 @@ from fusionsid.text import Text
 
 """
 FusionSidAPI
-An asynchronous api wrapper for [FusionSidAPI](https://fusionsidapi.herokuapp.com).
+An asynchronous api wrapper for [FusionSidAPI](https://api.fusionsid.xyz).
 """
 
 __license__ = "MIT"
-__version__ = "1.0.5"
+__version__ = "1.0.6"
 __author__ = "FusionSid"
 __title__ = "fusionsidapi"
-__url__ = "https://fusionsidapi.herokuapp.com"
+__url__ = "https://api.fusionsid.xyz"
 __docs__ = "https://fusionsid.github.io/FusionSidAPI.py/"
 __github__ = "https://github.com/FusionSid/FusionSidAPI.py"
 __api_github__ = "https://github.com/FusionSid/FusionSidsAPI"

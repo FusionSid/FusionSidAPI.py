@@ -4,7 +4,7 @@ from typing import Dict
 
 class HTTPClient:
     def __init__(self):
-        self.BASE_URL = "https://fusionsidapi.herokuapp.com/api"
+        self.BASE_URL = "https://api.fusionsid.xyz/api"
 
     async def get_image(self, url) -> bytes:
         """
@@ -26,9 +26,11 @@ class HTTPClient:
         This function makes a get request to a url and returns the image
 
         Parameters
+        ----------
            url (str) : The url to make a request to
 
-        Returns:
+        Returns
+        -------
             :class:`bytes` : The image
         """
         async with aiohttp.ClientSession() as session:

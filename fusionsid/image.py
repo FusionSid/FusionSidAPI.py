@@ -250,7 +250,7 @@ class Image:
 
         async with aiohttp.ClientSession() as session:
             async with session.post(
-                f"https://fusionsidapi.herokuapp.com/api/get_colors/?show_hex={show_hex}",
+                f"https://api.fusionsid.xyz/api/get_colors/?show_hex={show_hex}",
                 data={"image": image_in_bytes},
             ) as resp:
                 data = await resp.json()
@@ -279,7 +279,7 @@ class Image:
         list_of_fonts = list_of_fonts["Font_List"]
 
         if font_name not in list_of_fonts:
-            url = "https://fusionsidapi.herokuapp.com/api/fontconvert/list"
+            url = "https://api.fusionsid.xyz/api/fontconvert/list"
             return print(
                 f"Invalid font, go to {url} to get a list of them or use the font list function"
             )
